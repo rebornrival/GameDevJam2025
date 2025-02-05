@@ -13,3 +13,5 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+/Only1 GameJam/Library
+/Only1 GameJam/Temp
