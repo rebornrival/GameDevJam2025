@@ -80,6 +80,7 @@ public class CharacterControllerScript : MonoBehaviour
     {
 
         playerControls = new PlayerInput();
+        trailRenderer = GetComponent<TrailRenderer>();
 
     }
 
@@ -190,9 +191,19 @@ public class CharacterControllerScript : MonoBehaviour
         isDashing = true;
 
         trailRenderer.emitting = true;
-        float dashDirection = 0f;
+        float dashDirection = isFacingRight ? 1f : -1f;
 
-        yield return 0f;
+        _rigidbody2D.linearVelocity = new Vector2(dashDirection * dashSpeed, _rigidbody2D.linearVelocity.y); // dash movement
+
+        yield return new WaitForSeconds(dashDuration);
+
+        _rigidbody2D.linearVelocity = new Vector2(0f, _rigidbody2D.linearVelocity.y); //reset horizontal velocity
+
+        isDashing = false;
+        trailRenderer.emitting = false;
+
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
 
     }
 
