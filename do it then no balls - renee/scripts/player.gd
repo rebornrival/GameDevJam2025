@@ -10,8 +10,9 @@ var double_jump = true
 
 var dash_unlocked = true
 var is_dashing = false
-var dash_timer = 1
+var dash_timer = .75
 var can_dash = true
+var curr_dir = 1
 
 func _physics_process(delta: float) -> void:
 	#MOVEMENT CONTROLS
@@ -24,7 +25,9 @@ func _physics_process(delta: float) -> void:
 			first_wall = true
 		if first_wall == true:
 			velocity.y += 400*delta
+			double_jump = true
 			can_dash = true
+			dash_timer = .75
 	elif not is_on_floor():
 		velocity.y += 1500*delta
 		first_wall = false
@@ -33,14 +36,15 @@ func _physics_process(delta: float) -> void:
 		double_jump = true
 		if is_dashing == false:
 			can_dash = true
-			dash_timer = 1
+			dash_timer = .75
 	#jump
 	if Input.is_action_just_pressed("ui_accept"):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		elif is_on_wall():
 			velocity.y = JUMP_VELOCITY
-			velocity.x = -1800*direction
+			velocity.x = -1800*curr_dir
+			#double_jump = true
 			#if you want to give the player the double jump back when they walljump, add double_jump == true here.
 		elif double_jump == true and double_jump_unlocked == true:
 			velocity.y = JUMP_VELOCITY
@@ -48,17 +52,18 @@ func _physics_process(delta: float) -> void:
 	#left and right
 	if direction and is_dashing == false:
 		velocity.x = move_toward(velocity.x, direction * SPEED, SPEED/4)
+		curr_dir = direction
 	else:
 		if is_dashing == false:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 	#dash
 	if is_dashing == true:
 		while dash_timer >= 0:
-			velocity.x += 40*direction
+			velocity.x += 40*curr_dir
 			dash_timer -=delta
 	if dash_timer <=0:
 		is_dashing = false
 	if Input.is_action_just_pressed("dash") and dash_unlocked == true and can_dash == true:
 		is_dashing = true
-		can_dash == false
+		can_dash = false
 	move_and_slide()
