@@ -14,6 +14,11 @@ var dash_timer = .75
 var can_dash = true
 var curr_dir = 1
 
+var slash_unlocked = true
+var is_slashing = false
+var slash_timer = 0.5
+var can_slash = true
+
 func _physics_process(delta: float) -> void:
 	#MOVEMENT CONTROLS
 	#I moved the direction check up a bit b/c I need it to wall jump and to change how we do wall slides.
@@ -56,6 +61,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		if is_dashing == false:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
+	#flip the sprite
+	if curr_dir == 1:
+		$AnimatedSprite2D.set_flip_h(false)
+	else:
+		$AnimatedSprite2D.set_flip_h(true)
 	#dash
 	if is_dashing == true:
 		while dash_timer >= 0:
@@ -66,4 +76,22 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("dash") and dash_unlocked == true and can_dash == true:
 		is_dashing = true
 		can_dash = false
+	#slash
+	if is_slashing == true:
+		slash_timer -=delta
+		if curr_dir == 1:
+			get_child(4).position.x = 20
+			get_child(4).get_child(0).set_flip_h(false)
+		else:
+			get_child(4).position.x = -20
+			get_child(4).get_child(0).set_flip_h(true)
+	if slash_timer <=0:
+		is_slashing = false
+		remove_child(get_child(4))
+		can_slash = true
+	if Input.is_action_just_pressed("hatchet") and slash_unlocked == true and can_slash == true:
+		is_slashing = true
+		can_slash = false
+		slash_timer = 0.5
+		add_child(load("res://scenes/la_swing.tscn").instantiate())
 	move_and_slide()
