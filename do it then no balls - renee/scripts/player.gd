@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 			can_dash = true
 			dash_timer = .75
 	#jump
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and not Globals.cutscenemode:
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		elif is_on_wall():
@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 			double_jump = false
 	#left and right
-	if direction and is_dashing == false:
+	if direction and is_dashing == false and not Globals.cutscenemode:
 		velocity.x = move_toward(velocity.x, direction * SPEED, SPEED/4)
 		curr_dir = direction
 	else:
@@ -73,7 +73,7 @@ func _physics_process(delta: float) -> void:
 			dash_timer -=delta
 	if dash_timer <=0:
 		is_dashing = false
-	if Input.is_action_just_pressed("dash") and dash_unlocked == true and can_dash == true:
+	if Input.is_action_just_pressed("dash") and dash_unlocked == true and can_dash == true and not Globals.cutscenemode:
 		is_dashing = true
 		can_dash = false
 	#slash
@@ -94,4 +94,15 @@ func _physics_process(delta: float) -> void:
 		can_slash = false
 		slash_timer = 0.5
 		add_child(load("res://scenes/la_swing.tscn").instantiate())
+	#animation code
+	if velocity.x == 0:
+		$AnimatedSprite2D.animation = "idle"
+		$AnimatedSprite2D.play()
+	else:
+		$AnimatedSprite2D.animation = "walk"
+		$AnimatedSprite2D.play()
+	#proof of concept global test dialog, press T to activate.
+	if Input.is_action_just_pressed("test"):
+		Globals.dialog = ["wHelp.", "hPlease.", "fThis goddamn engine."]
+		
 	move_and_slide()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://ds0mv8ptac8wb"]
+[gd_scene load_steps=8 format=4 uid="uid://ds0mv8ptac8wb"]
 
 [ext_resource type="Texture2D" uid="uid://lltf2ixycygi" path="res://assets/la_cube.png" id="1_sglok"]
 [ext_resource type="PackedScene" uid="uid://bhntly1s8sjlx" path="res://scenes/player.tscn" id="2_sx8f2"]
 [ext_resource type="Texture2D" uid="uid://dkjdeb7ambqt3" path="res://assets/tilemap 1 building set.png" id="3_ughhm"]
+[ext_resource type="Script" path="res://scripts/dialog.gd" id="4_c5km1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3r0r"]
 size = Vector2(448, 64)
@@ -98,3 +99,12 @@ floor_snap_length = 10.0
 scale = Vector2(0.1, 0.1)
 tile_map_data = PackedByteArray("AAABAP3/AAACAAIAAAACAP3/AAADAAIAAAADAP7/AAADAAIAAAACAP7/AAADAAAAAAABAP7/AAADAAAAAAADAP//AAADAAAAAAACAP//AAADAAAAAAABAP//AAADAAAAAAAAAP//AAADAAAAAAAAAP7/AAACAAIAAAD/////AAACAAIAAAAEAP//AAADAAIAAAA=")
 tile_set = SubResource("TileSet_41l8j")
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="Dialog" type="Label" parent="UILayer"]
+offset_left = 276.0
+offset_top = 550.0
+offset_right = 876.0
+offset_bottom = 650.0
+script = ExtResource("4_c5km1")
