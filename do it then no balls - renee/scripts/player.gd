@@ -19,12 +19,20 @@ var is_slashing = false
 var slash_timer = 0.5
 var can_slash = true
 
+var can_land = false
+var is_landing = false
+var land_timer = 0.36
+
+var is_jumping = false
+var jump_timer = 0.3
+
 func _physics_process(delta: float) -> void:
 	#MOVEMENT CONTROLS
 	#I moved the direction check up a bit b/c I need it to wall jump and to change how we do wall slides.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	#gravity
 	if is_on_wall() and velocity.y >=0 and not is_on_floor() and direction:
+		can_land = true
 		if first_wall == false:
 			velocity.y = 0
 			first_wall = true
@@ -34,6 +42,7 @@ func _physics_process(delta: float) -> void:
 			can_dash = true
 			dash_timer = .75
 	elif not is_on_floor():
+		can_land = true
 		velocity.y += 1500*delta
 		first_wall = false
 	else:
@@ -42,10 +51,15 @@ func _physics_process(delta: float) -> void:
 		if is_dashing == false:
 			can_dash = true
 			dash_timer = .75
+		if can_land:
+			can_land = false
+			is_landing = true
+			land_timer = 0.36
 	#jump
 	if Input.is_action_just_pressed("ui_accept") and not Globals.cutscenemode:
 		if is_on_floor():
-			velocity.y = JUMP_VELOCITY
+			is_jumping = true
+			jump_timer = 0.3
 		elif is_on_wall():
 			velocity.y = JUMP_VELOCITY
 			velocity.x = -1800*curr_dir
@@ -94,8 +108,30 @@ func _physics_process(delta: float) -> void:
 		can_slash = false
 		slash_timer = 0.5
 		add_child(load("res://scenes/la_swing.tscn").instantiate())
+	#jumping timer
+	if is_jumping == true:
+		jump_timer -=delta
+	if jump_timer <=0 and is_jumping:
+		is_jumping = false
+		velocity.y = JUMP_VELOCITY
+	#landing timer
+	if is_landing == true:
+		land_timer -=delta
+	if land_timer <=0:
+		is_landing = false
 	#animation code
-	if velocity.x == 0:
+	if is_jumping:
+		$AnimatedSprite2D.animation = "jump"
+		if $AnimatedSprite2D.frame == 0:
+			$AnimatedSprite2D.play()
+	elif !is_on_floor():
+		$AnimatedSprite2D.animation = "fall"
+		$AnimatedSprite2D.play()
+	elif is_landing:
+		$AnimatedSprite2D.animation = "land"
+		if $AnimatedSprite2D.frame == 0:
+			$AnimatedSprite2D.play()
+	elif velocity.x == 0:
 		$AnimatedSprite2D.animation = "idle"
 		$AnimatedSprite2D.play()
 	else:
@@ -104,5 +140,5 @@ func _physics_process(delta: float) -> void:
 	#proof of concept global test dialog, press T to activate.
 	if Input.is_action_just_pressed("test"):
 		Globals.dialog = ["wHelp.", "hPlease.", "fThis goddamn engine."]
-		
+		Globals.cutscenemode = true
 	move_and_slide()

@@ -1,13 +1,18 @@
-[gd_scene load_steps=35 format=3 uid="uid://bhntly1s8sjlx"]
+[gd_scene load_steps=47 format=3 uid="uid://bhntly1s8sjlx"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_d7m64"]
 [ext_resource type="Texture2D" uid="uid://cwdwaufuo1n51" path="res://assets/la_triang.png" id="1_leerf"]
+[ext_resource type="Texture2D" uid="uid://bp1xybtvdkcqw" path="res://assets/jumping animation sprite sheet.png" id="3_kbgv8"]
 [ext_resource type="Texture2D" uid="uid://buiqiw7yxxd8b" path="res://assets/idle animation sprite sheet.png" id="3_w2u7u"]
 [ext_resource type="Texture2D" uid="uid://byxfcxovm8m2c" path="res://assets/walking animation sprite sheet.png" id="4_j5hb8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nj822"]
 radius = 213.333
 height = 1146.67
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6118j"]
+atlas = ExtResource("3_kbgv8")
+region = Rect2(4716, 0, 786, 1412)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldbex"]
 atlas = ExtResource("3_w2u7u")
@@ -89,6 +94,46 @@ region = Rect2(2568, 2424, 642, 1212)
 atlas = ExtResource("3_w2u7u")
 region = Rect2(3210, 2424, 642, 1212)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjeic"]
+atlas = ExtResource("3_kbgv8")
+region = Rect2(0, 0, 786, 1412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omywk"]
+atlas = ExtResource("3_kbgv8")
+region = Rect2(786, 0, 786, 1412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wgww"]
+atlas = ExtResource("3_kbgv8")
+region = Rect2(1572, 0, 786, 1412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk3y2"]
+atlas = ExtResource("3_kbgv8")
+region = Rect2(2358, 0, 786, 1412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84rk6"]
+atlas = ExtResource("3_kbgv8")
+region = Rect2(3144, 0, 786, 1412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf1i0"]
+atlas = ExtResource("3_kbgv8")
+region = Rect2(3930, 0, 786, 1412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5y2x"]
+atlas = ExtResource("3_kbgv8")
+region = Rect2(5502, 0, 786, 1412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nwl0"]
+atlas = ExtResource("3_kbgv8")
+region = Rect2(6288, 0, 786, 1412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4mg4"]
+atlas = ExtResource("3_kbgv8")
+region = Rect2(7074, 0, 786, 1412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmi1w"]
+atlas = ExtResource("3_kbgv8")
+region = Rect2(7860, 0, 786, 1412)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_i02l1"]
 atlas = ExtResource("4_j5hb8")
 region = Rect2(0, 0, 610, 1215)
@@ -123,6 +168,14 @@ region = Rect2(4270, 0, 610, 1215)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_26qaq"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6118j")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 0.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ldbex")
@@ -190,6 +243,46 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_yjeic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omywk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wgww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kk3y2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84rk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kf1i0")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5y2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nwl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4mg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmi1w")
+}],
+"loop": true,
+"name": &"land",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_i02l1")
 }, {
 "duration": 1.0,
@@ -236,5 +329,5 @@ shape = SubResource("CapsuleShape2D_nj822")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_26qaq")
-animation = &"idle"
+animation = &"land"
 autoplay = "idle"
