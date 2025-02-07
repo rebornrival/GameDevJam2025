@@ -22,6 +22,10 @@ Globals="*res://scripts/globals.gd"
 
 window/stretch/mode="canvas_items"
 
+[dotnet]
+
+project/assembly_name="Only one"
+
 [input]
 
 ui_left={
