@@ -1,0 +1,133 @@
+[gd_scene load_steps=18 format=3 uid="uid://mim5sfiqoheh"]
+
+[ext_resource type="Script" path="res://scripts/memory_of_wrath.gd" id="1_msg7d"]
+[ext_resource type="Texture2D" uid="uid://byxfcxovm8m2c" path="res://assets/walking animation sprite sheet.png" id="2_v6ycb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xbwx1"]
+radius = 19.5
+height = 113.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqigo"]
+atlas = ExtResource("2_v6ycb")
+region = Rect2(0, 0, 610, 1215)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhdhy"]
+atlas = ExtResource("2_v6ycb")
+region = Rect2(610, 0, 610, 1215)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1xeu"]
+atlas = ExtResource("2_v6ycb")
+region = Rect2(1220, 0, 610, 1215)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkl2i"]
+atlas = ExtResource("2_v6ycb")
+region = Rect2(1830, 0, 610, 1215)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj4fw"]
+atlas = ExtResource("2_v6ycb")
+region = Rect2(2440, 0, 610, 1215)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38oi0"]
+atlas = ExtResource("2_v6ycb")
+region = Rect2(3050, 0, 610, 1215)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qc5f"]
+atlas = ExtResource("2_v6ycb")
+region = Rect2(3660, 0, 610, 1215)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5qoi"]
+atlas = ExtResource("2_v6ycb")
+region = Rect2(4270, 0, 610, 1215)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_app1q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqigo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhdhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1xeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkl2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kj4fw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38oi0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qc5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5qoi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vac7s"]
+size = Vector2(84, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uksnr"]
+size = Vector2(83, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1buj"]
+size = Vector2(388, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u5mm"]
+size = Vector2(390, 86)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ocsk2"]
+radius = 20.0
+height = 116.0
+
+[node name="memory of wrath" type="CharacterBody2D"]
+script = ExtResource("1_msg7d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_xbwx1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_app1q")
+
+[node name="slash_range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slash_range"]
+position = Vector2(64, 0)
+shape = SubResource("RectangleShape2D_vac7s")
+
+[node name="slah_range_left" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slah_range_left"]
+position = Vector2(-63.5, 0)
+shape = SubResource("RectangleShape2D_uksnr")
+
+[node name="charge_range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="charge_range"]
+position = Vector2(300, 0)
+shape = SubResource("RectangleShape2D_l1buj")
+
+[node name="charge_range_left" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="charge_range_left"]
+position = Vector2(-300, 0)
+shape = SubResource("RectangleShape2D_1u5mm")
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CapsuleShape2D_ocsk2")
+
+[connection signal="body_entered" from="slash_range" to="." method="_on_slash_range_body_entered"]
+[connection signal="body_entered" from="slah_range_left" to="." method="_on_slah_range_left_body_entered"]
+[connection signal="body_entered" from="charge_range" to="." method="_on_charge_range_body_entered"]
+[connection signal="body_entered" from="charge_range_left" to="." method="_on_charge_range_left_body_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
