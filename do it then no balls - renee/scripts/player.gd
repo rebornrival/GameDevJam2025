@@ -124,7 +124,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.animation = "jump"
 		if $AnimatedSprite2D.frame == 0:
 			$AnimatedSprite2D.play()
-	elif is_on_wall() and !is_on_floor():
+	elif (is_on_wall() and !is_on_floor()) or is_dashing:
 		$AnimatedSprite2D.animation = "slide"
 		$AnimatedSprite2D.play()
 	elif !is_on_floor():
