@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bhntly1s8sjlx" path="res://scenes/player.tscn" id="2_sx8f2"]
 [ext_resource type="Script" path="res://scripts/dialog.gd" id="4_c5km1"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7soi4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r5tyo"]
 texture = ExtResource("2_lspvq")
 texture_region_size = Vector2i(512, 512)
 0:0/0 = 0
@@ -75,7 +75,7 @@ texture_region_size = Vector2i(512, 512)
 [sub_resource type="TileSet" id="TileSet_41l8j"]
 tile_size = Vector2i(512, 512)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_7soi4")
+sources/0 = SubResource("TileSetAtlasSource_r5tyo")
 
 [node name="world" type="Node2D"]
 
