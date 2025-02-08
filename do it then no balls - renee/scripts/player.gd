@@ -120,10 +120,13 @@ func _physics_process(delta: float) -> void:
 	if land_timer <=0:
 		is_landing = false
 	#animation code
-	if is_jumping:
+	if is_jumping or velocity.y < 0:
 		$AnimatedSprite2D.animation = "jump"
 		if $AnimatedSprite2D.frame == 0:
 			$AnimatedSprite2D.play()
+	elif is_on_wall() and !is_on_floor():
+		$AnimatedSprite2D.animation = "slide"
+		$AnimatedSprite2D.play()
 	elif !is_on_floor():
 		$AnimatedSprite2D.animation = "fall"
 		$AnimatedSprite2D.play()

@@ -1,18 +1,24 @@
-[gd_scene load_steps=47 format=3 uid="uid://bhntly1s8sjlx"]
+[gd_scene load_steps=53 format=3 uid="uid://bhntly1s8sjlx"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_d7m64"]
 [ext_resource type="Texture2D" uid="uid://cwdwaufuo1n51" path="res://assets/la_triang.png" id="1_leerf"]
+[ext_resource type="Texture2D" uid="uid://bu82so7wtbphs" path="res://assets/fall animation sprite sheet.PNG" id="3_6j4xv"]
 [ext_resource type="Texture2D" uid="uid://bp1xybtvdkcqw" path="res://assets/jumping animation sprite sheet.png" id="3_kbgv8"]
 [ext_resource type="Texture2D" uid="uid://buiqiw7yxxd8b" path="res://assets/idle animation sprite sheet.png" id="3_w2u7u"]
 [ext_resource type="Texture2D" uid="uid://byxfcxovm8m2c" path="res://assets/walking animation sprite sheet.png" id="4_j5hb8"]
+[ext_resource type="Texture2D" uid="uid://bn6i4ewt0wpg7" path="res://assets/wall slide animation sprite sheet.png" id="6_h6env"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nj822"]
 radius = 213.333
 height = 1146.67
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6118j"]
-atlas = ExtResource("3_kbgv8")
-region = Rect2(4716, 0, 786, 1412)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsbyj"]
+atlas = ExtResource("3_6j4xv")
+region = Rect2(0, 0, 747, 1094)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fl5d"]
+atlas = ExtResource("3_6j4xv")
+region = Rect2(747, 0, 747, 1094)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldbex"]
 atlas = ExtResource("3_w2u7u")
@@ -118,6 +124,10 @@ region = Rect2(3144, 0, 786, 1412)
 atlas = ExtResource("3_kbgv8")
 region = Rect2(3930, 0, 786, 1412)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4ph0"]
+atlas = ExtResource("3_kbgv8")
+region = Rect2(4716, 0, 786, 1412)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_n5y2x"]
 atlas = ExtResource("3_kbgv8")
 region = Rect2(5502, 0, 786, 1412)
@@ -133,6 +143,14 @@ region = Rect2(7074, 0, 786, 1412)
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmi1w"]
 atlas = ExtResource("3_kbgv8")
 region = Rect2(7860, 0, 786, 1412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytx86"]
+atlas = ExtResource("6_h6env")
+region = Rect2(0, 0, 657, 1128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkeuc"]
+atlas = ExtResource("6_h6env")
+region = Rect2(657, 0, 657, 1128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i02l1"]
 atlas = ExtResource("4_j5hb8")
@@ -170,11 +188,14 @@ region = Rect2(4270, 0, 610, 1215)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6118j")
+"texture": SubResource("AtlasTexture_dsbyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fl5d")
 }],
 "loop": false,
 "name": &"fall",
-"speed": 0.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -259,6 +280,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kf1i0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4ph0")
 }],
 "loop": false,
 "name": &"jump",
@@ -280,6 +304,17 @@ animations = [{
 "loop": true,
 "name": &"land",
 "speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytx86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkeuc")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -329,5 +364,5 @@ shape = SubResource("CapsuleShape2D_nj822")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_26qaq")
-animation = &"land"
+animation = &"slide"
 autoplay = "idle"
