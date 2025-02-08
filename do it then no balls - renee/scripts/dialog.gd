@@ -1,6 +1,7 @@
 extends Label
 var textpos = 1
 func _ready():
+	set("theme_override_font_sizes/font_size", 48)
 	pass # Replace with function body.
 
 
