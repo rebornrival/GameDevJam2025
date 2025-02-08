@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://ds0mv8ptac8wb"]
+[gd_scene load_steps=8 format=4 uid="uid://ds0mv8ptac8wb"]
 
 [ext_resource type="Texture2D" uid="uid://c3r8tbdbcr10x" path="res://assets/tilemap 1&2 building set.png" id="2_lspvq"]
 [ext_resource type="PackedScene" uid="uid://bhntly1s8sjlx" path="res://scenes/player.tscn" id="2_sx8f2"]
+[ext_resource type="Texture2D" uid="uid://cl2wefxpogjj8" path="res://assets/dialogbox.png" id="3_iu3qr"]
 [ext_resource type="Script" path="res://scripts/dialog.gd" id="4_c5km1"]
+[ext_resource type="Script" path="res://scenes/DialogBox.gd" id="4_cx5nd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r5tyo"]
 texture = ExtResource("2_lspvq")
@@ -91,9 +93,16 @@ floor_snap_length = 10.0
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
+[node name="Sprite2D" type="Sprite2D" parent="UILayer"]
+position = Vector2(960, 880)
+scale = Vector2(1, 0.6)
+texture = ExtResource("3_iu3qr")
+script = ExtResource("4_cx5nd")
+
 [node name="Dialog" type="Label" parent="UILayer"]
-offset_left = 276.0
-offset_top = 550.0
-offset_right = 876.0
-offset_bottom = 650.0
+offset_left = 256.0
+offset_top = 800.0
+offset_right = 1656.0
+offset_bottom = 950.0
+autowrap_mode = 2
 script = ExtResource("4_c5km1")

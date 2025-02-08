@@ -142,6 +142,6 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play()
 	#proof of concept global test dialog, press T to activate.
 	if Input.is_action_just_pressed("test"):
-		Globals.dialog = ["wHelp.", "hPlease.", "fThis goddamn engine."]
+		Globals.dialog = ["wHelp.", "hPlease.", "fThis goddamn engine is my 13th reason why. End this shit. End me. Kill my bitch ass. Please."]
 		Globals.cutscenemode = true
 	move_and_slide()
