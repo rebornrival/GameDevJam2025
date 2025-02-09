@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://b60dsayxkw2ja"
+=======
+uid="uid://b483jqrlew346"
+>>>>>>> df6f8bb219b82a2473fad4c0ff102a58288bdcf9
 path="res://.godot/imported/shadow walk sprite sheet.png-2d1cba0c9e036756d111ceb0fff70bc1.ctex"
 metadata={
 "vram_texture": false
