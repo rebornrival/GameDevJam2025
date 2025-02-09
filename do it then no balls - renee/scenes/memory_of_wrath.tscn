@@ -94,6 +94,7 @@ script = ExtResource("1_msg7d")
 shape = SubResource("CapsuleShape2D_xbwx1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.336608, 0.336608, 0.336608, 1)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_app1q")
 
