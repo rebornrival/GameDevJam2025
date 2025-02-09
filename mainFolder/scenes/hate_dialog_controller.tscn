@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://yy5dkqnhn5e5"]
+
+[ext_resource type="Script" path="res://scenes/hate_dialog_controller.gd" id="1_pbdra"]
+[ext_resource type="Texture2D" uid="uid://cl2wefxpogjj8" path="res://assets/dialogbox.png" id="2_1esir"]
+
+[node name="HateDialogController" type="Node2D"]
+script = ExtResource("1_pbdra")
+
+[node name="OptionLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="OptionLayer"]
+position = Vector2(960, 880)
+scale = Vector2(1, 0.6)
+texture = ExtResource("2_1esir")
+
+[node name="Dialog1" type="Label" parent="OptionLayer"]
+offset_left = 250.0
+offset_top = 800.0
+offset_right = 650.0
+offset_bottom = 1100.0
+text = "This option is the first of three."
+autowrap_mode = 2
+
+[node name="Dialog2" type="Label" parent="OptionLayer"]
+offset_left = 750.0
+offset_top = 800.0
+offset_right = 1150.0
+offset_bottom = 1100.0
+text = "This option is the second of three."
+autowrap_mode = 2
+
+[node name="Dialog3" type="Label" parent="OptionLayer"]
+offset_left = 1250.0
+offset_top = 800.0
+offset_right = 1650.0
+offset_bottom = 1100.0
+text = "This option is the third of three."
+autowrap_mode = 2
