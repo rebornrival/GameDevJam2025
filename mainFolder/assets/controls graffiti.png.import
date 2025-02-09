@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://dniai0skm5k88"
+=======
 uid="uid://dysulbis8y46r"
+>>>>>>> origin/main
 path="res://.godot/imported/controls graffiti.png-da5fd665dd2a3c51fcda39e1399f6f3f.ctex"
 metadata={
 "vram_texture": false
