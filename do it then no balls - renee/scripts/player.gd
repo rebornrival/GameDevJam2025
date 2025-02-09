@@ -24,7 +24,7 @@ var is_landing = false
 var land_timer = 0.36
 
 var is_jumping = false
-var jump_timer = 0.3
+var jump_timer = 0.1
 
 func _physics_process(delta: float) -> void:
 	#MOVEMENT CONTROLS
@@ -59,7 +59,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and not Globals.cutscenemode:
 		if is_on_floor():
 			is_jumping = true
-			jump_timer = 0.3
+			jump_timer = 0.1
 		elif is_on_wall():
 			velocity.y = JUMP_VELOCITY
 			velocity.x = -1800*curr_dir
@@ -82,9 +82,11 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.set_flip_h(true)
 	#dash
 	if is_dashing == true:
-		while dash_timer >= 0:
-			velocity.x += 40*curr_dir
-			dash_timer -=delta
+		velocity.x = curr_dir * (SPEED + 1000*dash_timer)
+		dash_timer -=delta
+		if is_on_wall():
+			is_dashing = false
+			velocity.x = -1*curr_dir * SPEED
 	if dash_timer <=0:
 		is_dashing = false
 	if Input.is_action_just_pressed("dash") and dash_unlocked == true and can_dash == true and not Globals.cutscenemode:
@@ -120,11 +122,15 @@ func _physics_process(delta: float) -> void:
 	if land_timer <=0:
 		is_landing = false
 	#animation code
-	if is_jumping or velocity.y < 0:
+	if is_dashing:
+		$AnimatedSprite2D.animation = "dash"
+		if $AnimatedSprite2D.frame == 0:
+			$AnimatedSprite2D.play()
+	elif is_jumping or velocity.y < 0:
 		$AnimatedSprite2D.animation = "jump"
 		if $AnimatedSprite2D.frame == 0:
 			$AnimatedSprite2D.play()
-	elif (is_on_wall() and !is_on_floor()) or is_dashing:
+	elif (is_on_wall() and !is_on_floor()):
 		$AnimatedSprite2D.animation = "slide"
 		$AnimatedSprite2D.play()
 	elif !is_on_floor():
@@ -142,6 +148,5 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play()
 	#proof of concept global test dialog, press T to activate.
 	if Input.is_action_just_pressed("test"):
-		Globals.dialog = ["wHelp.", "hPlease.", "fThis goddamn engine is my 13th reason why. End this shit. End me. Kill my bitch ass. Please."]
-		Globals.cutscenemode = true
+		add_child(load("res://scenes/hate_dialog_controller.tscn").instantiate())
 	move_and_slide()
