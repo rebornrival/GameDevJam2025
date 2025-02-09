@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c73bfjuwm813y"
-path="res://.godot/imported/tree background flat.png-83601b388288f5d699af27020dbd8eb3.ctex"
+uid="uid://dniai0skm5k88"
+path="res://.godot/imported/controls graffiti.png-da5fd665dd2a3c51fcda39e1399f6f3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tree background flat.png"
-dest_files=["res://.godot/imported/tree background flat.png-83601b388288f5d699af27020dbd8eb3.ctex"]
+source_file="res://assets/controls graffiti.png"
+dest_files=["res://.godot/imported/controls graffiti.png-da5fd665dd2a3c51fcda39e1399f6f3f.ctex"]
 
 [params]
 
