@@ -1,5 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dr7l4xbe1fgq4"]
 
+
 [ext_resource type="Script" path="res://scenes/margin_container.gd" id="1_28ao0"]
 
 [node name="main_menu" type="Control"]
