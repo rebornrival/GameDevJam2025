@@ -712,7 +712,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kneij")
 }],
-"loop": true,
+"loop": false,
 "name": &"merge",
 "speed": 6.0
 }, {
@@ -780,7 +780,7 @@ shape = SubResource("CapsuleShape2D_nj822")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_26qaq")
-animation = &"dash"
+animation = &"merge"
 autoplay = "idle"
 
 [node name="respawnCollison" type="CollisionShape2D" parent="."]
