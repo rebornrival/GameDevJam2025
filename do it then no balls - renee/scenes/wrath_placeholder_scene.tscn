@@ -87,6 +87,7 @@ tile_map_data = PackedByteArray("AAD0/wUAAAADAAQAAAD1/wUAAAADAAQAAAD2/wUAAAADAAQ
 tile_set = SubResource("TileSet_oms7v")
 
 [node name="player" parent="." instance=ExtResource("2_vp64u")]
+z_index = 0
 position = Vector2(1148, -10)
 
 [node name="memory of wrath" parent="." instance=ExtResource("3_ls4i5")]
