@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://bww5r08pj01kk"]
+[gd_scene load_steps=7 format=4 uid="uid://csqsmhe3fnfsd"]
 
 [ext_resource type="Texture2D" uid="uid://c3r8tbdbcr10x" path="res://assets/tilemap 1&2 building set.png" id="1_lvdap"]
 [ext_resource type="PackedScene" uid="uid://bhntly1s8sjlx" path="res://scenes/player.tscn" id="2_vp64u"]
 [ext_resource type="PackedScene" uid="uid://mim5sfiqoheh" path="res://scenes/memory_of_wrath.tscn" id="3_ls4i5"]
-[ext_resource type="PackedScene" uid="uid://b1bdjlwavi2m5" path="res://scenes/wrath_tree.tscn" id="4_ysbcj"]
+[ext_resource type="PackedScene" uid="uid://cnan4207outes" path="res://scenes/wrath_tree.tscn" id="4_ysbcj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nlpil"]
 texture = ExtResource("1_lvdap")
