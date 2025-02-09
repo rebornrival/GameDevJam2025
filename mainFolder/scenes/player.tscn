@@ -1,8 +1,7 @@
-[gd_scene load_steps=120 format=3 uid="uid://bhntly1s8sjlx"]
+[gd_scene load_steps=119 format=3 uid="uid://bhntly1s8sjlx"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_d7m64"]
 [ext_resource type="Texture2D" uid="uid://cwdwaufuo1n51" path="res://assets/la_triang.png" id="1_leerf"]
-[ext_resource type="Script" path="res://scripts/player_camera.gd" id="2_1w3s4"]
 [ext_resource type="Texture2D" uid="uid://bu82so7wtbphs" path="res://assets/fall animation sprite sheet.PNG" id="3_6j4xv"]
 [ext_resource type="Texture2D" uid="uid://c27ek3mc8xu78" path="res://assets/dash animation sprite sheet.png" id="3_8w6rv"]
 [ext_resource type="Texture2D" uid="uid://bp1xybtvdkcqw" path="res://assets/jumping animation sprite sheet.png" id="3_kbgv8"]
@@ -767,7 +766,6 @@ z_index = 2
 script = ExtResource("1_d7m64")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
-script = ExtResource("2_1w3s4")
 
 [node name="LaTriang" type="Sprite2D" parent="."]
 visible = false

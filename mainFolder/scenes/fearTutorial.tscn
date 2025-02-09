@@ -7340,7 +7340,7 @@ tile_size = Vector2i(512, 512)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6npvf")
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="background" type="TileMapLayer" parent="."]
 position = Vector2(-1, 0)
