@@ -133,8 +133,15 @@ func _physics_process(delta: float) -> void:
 		is_parrying = true
 		parry_timer = 2.0
 		can_parry = false
+	
+	if Globals.absorb_timer > 0:
+		Globals.absorb_timer -= delta
 	#animation code
-	if is_slashing:
+	if Globals.absorb_timer > 0:
+		$AnimatedSprite2D.animation = "merge"
+		if $AnimatedSprite2D.frame == 0:
+			$AnimatedSprite2D.play()
+	elif is_slashing:
 		$AnimatedSprite2D.animation = "slash"
 		if $AnimatedSprite2D.frame == 0:
 			$AnimatedSprite2D.play()
