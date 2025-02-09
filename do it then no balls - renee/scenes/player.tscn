@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 
+[gd_scene load_steps=146 format=3 uid="uid://bhntly1s8sjlx"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_d7m64"]
 [ext_resource type="Texture2D" uid="uid://cwdwaufuo1n51" path="res://assets/la_triang.png" id="1_leerf"]
@@ -20,10 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://d10m2dpdf6t5b" path="res://assets/parry w debris animation sprite sheet.png" id="16_jr71k"]
 [ext_resource type="Texture2D" uid="uid://c65d8pt6cnkfd" path="res://assets/attack animation sprite sheet 1.png" id="17_tlvt2"]
 [ext_resource type="Texture2D" uid="uid://dopcbx8xntsdd" path="res://assets/attack animation sprite sheet 2.png" id="18_xdq3i"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nj822"]
-radius = 213.333
-height = 1146.67
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j02ld"]
 atlas = ExtResource("3_8w6rv")
@@ -937,9 +933,13 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0orsi"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nj822"]
+radius = 213.333
+height = 1146.67
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bbgea"]
 radius = 22.0
-height = 124.0
+height = 116.0
 
 [node name="player" type="CharacterBody2D"]
 z_index = 2
@@ -951,16 +951,21 @@ script = ExtResource("1_d7m64")
 scale = Vector2(2, 2)
 texture = ExtResource("1_leerf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
-scale = Vector2(0.1, 0.1)
-shape = SubResource("CapsuleShape2D_nj822")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_26qaq")
 animation = &"slash"
 autoplay = "idle"
 
-[node name="respawnCollison" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_0orsi")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("CapsuleShape2D_nj822")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_bbgea")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

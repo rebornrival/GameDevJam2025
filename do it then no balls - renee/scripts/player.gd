@@ -31,6 +31,8 @@ var is_parrying = false
 var parry_timer = 2
 var can_parry = true
 
+var current_spawn = 'respawnNode'
+
 func _physics_process(delta: float) -> void:
 	#MOVEMENT CONTROLS
 	#I moved the direction check up a bit b/c I need it to wall jump and to change how we do wall slides.
@@ -178,4 +180,14 @@ func _physics_process(delta: float) -> void:
 	#proof of concept global test dialog, press T to activate.
 	if Input.is_action_just_pressed("test"):
 		add_child(load("res://scenes/hate_dialog_controller.tscn").instantiate())
+	#Respawn bullshit
+	
 	move_and_slide()
+
+func respawn():
+	get_node(".").global_transform = get_node(current_spawn).global_transform
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if "respawn" in area.name:
+		current_spawn = area.name
+	pass # Replace with function body.
