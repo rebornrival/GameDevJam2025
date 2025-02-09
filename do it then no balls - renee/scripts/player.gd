@@ -26,6 +26,7 @@ var land_timer = 0.36
 var is_jumping = false
 var jump_timer = 0.1
 
+
 func _physics_process(delta: float) -> void:
 	#MOVEMENT CONTROLS
 	#I moved the direction check up a bit b/c I need it to wall jump and to change how we do wall slides.
