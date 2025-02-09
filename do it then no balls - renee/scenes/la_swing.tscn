@@ -1,68 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c46tdgk0r0eok"]
-
-[ext_resource type="Texture2D" uid="uid://ccakgo6fnw4ql" path="res://assets/tempslice.png" id="1_a1euf"]
+[gd_scene load_steps=2 format=3 uid="uid://c46tdgk0r0eok"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jryn8"]
 radius = 30.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uutbl"]
-atlas = ExtResource("1_a1euf")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fdcsq"]
-atlas = ExtResource("1_a1euf")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jy3eo"]
-atlas = ExtResource("1_a1euf")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dr28v"]
-atlas = ExtResource("1_a1euf")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hiqox"]
-atlas = ExtResource("1_a1euf")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fpl2l"]
-atlas = ExtResource("1_a1euf")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_x41sm"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uutbl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fdcsq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jy3eo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dr28v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hiqox")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fpl2l")
-}],
-"loop": false,
-"name": &"default",
-"speed": 15.0
-}]
 
 [node name="LaSwing" type="ShapeCast2D"]
 position = Vector2(20, 0)
 shape = SubResource("CircleShape2D_jryn8")
 target_position = Vector2(0, 0)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_x41sm")
-autoplay = "default"
-frame = 5
-frame_progress = 1.0
