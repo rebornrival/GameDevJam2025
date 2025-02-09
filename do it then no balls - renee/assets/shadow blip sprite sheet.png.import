@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://dwwnrnpgc6rfx"
-=======
-uid="uid://02ipmy728iwy"
->>>>>>> df6f8bb219b82a2473fad4c0ff102a58288bdcf9
-path="res://.godot/imported/shadow attack sprite sheet.png-8faee0f61cd088b3adc2c13de7623484.ctex"
+uid="uid://csi28keovxbnm"
+path="res://.godot/imported/shadow blip sprite sheet.png-9d2d6cc6f798931df8567d16b55a4b50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shadow attack sprite sheet.png"
-dest_files=["res://.godot/imported/shadow attack sprite sheet.png-8faee0f61cd088b3adc2c13de7623484.ctex"]
+source_file="res://assets/shadow blip sprite sheet.png"
+dest_files=["res://.godot/imported/shadow blip sprite sheet.png-9d2d6cc6f798931df8567d16b55a4b50.ctex"]
 
 [params]
 
