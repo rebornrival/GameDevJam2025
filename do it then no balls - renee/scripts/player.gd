@@ -16,7 +16,7 @@ var curr_dir = 1
 
 var slash_unlocked = true
 var is_slashing = false
-var slash_timer = 0.5
+var slash_timer = 1
 var can_slash = true
 
 var can_land = false
@@ -26,6 +26,10 @@ var land_timer = 0.36
 var is_jumping = false
 var jump_timer = 0.1
 
+var parry_unlocked = true
+var is_parrying = false
+var parry_timer = 2
+var can_parry = true
 
 func _physics_process(delta: float) -> void:
 	#MOVEMENT CONTROLS
@@ -98,10 +102,8 @@ func _physics_process(delta: float) -> void:
 		slash_timer -=delta
 		if curr_dir == 1:
 			get_child(4).position.x = 20
-			get_child(4).get_child(0).set_flip_h(false)
 		else:
 			get_child(4).position.x = -20
-			get_child(4).get_child(0).set_flip_h(true)
 	if slash_timer <=0:
 		is_slashing = false
 		remove_child(get_child(4))
@@ -109,7 +111,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("hatchet") and slash_unlocked == true and can_slash == true:
 		is_slashing = true
 		can_slash = false
-		slash_timer = 0.5
+		slash_timer = 1
 		add_child(load("res://scenes/la_swing.tscn").instantiate())
 	#jumping timer
 	if is_jumping == true:
@@ -122,8 +124,34 @@ func _physics_process(delta: float) -> void:
 		land_timer -=delta
 	if land_timer <=0:
 		is_landing = false
+	#parrying code. Note that parries will have to be handled by the attacker checking the is_parrying tag
+	if is_parrying == true:
+		velocity.x = 0
+		parry_timer -=delta
+	if parry_timer <=1:
+		is_parrying = false
+		parry_timer-= delta
+	if parry_timer <= 0:
+		can_parry = true
+	if Input.is_action_just_pressed("parry") and parry_unlocked == true and can_parry == true and not Globals.cutscenemode:
+		is_parrying = true
+		parry_timer = 2.0
+		can_parry = false
 	#animation code
-	if is_dashing:
+	if is_slashing:
+		$AnimatedSprite2D.animation = "slash"
+		if $AnimatedSprite2D.frame == 0:
+			$AnimatedSprite2D.play()
+	elif is_parrying:
+		if slash_unlocked:
+			$AnimatedSprite2D.animation = "parry_axe"
+			if $AnimatedSprite2D.frame == 0:
+				$AnimatedSprite2D.play()
+		else:
+			$AnimatedSprite2D.animation = "parry_debris"
+			if $AnimatedSprite2D.frame == 0:
+				$AnimatedSprite2D.play()
+	elif is_dashing:
 		$AnimatedSprite2D.animation = "dash"
 		if $AnimatedSprite2D.frame == 0:
 			$AnimatedSprite2D.play()
