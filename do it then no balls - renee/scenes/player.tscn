@@ -758,6 +758,7 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D"]
+z_index = 2
 script = ExtResource("1_d7m64")
 
 [node name="Camera2D" type="Camera2D" parent="."]

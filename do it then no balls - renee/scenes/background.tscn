@@ -2,7 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://d1vw00k5nkaqu" path="res://assets/fear background flat.png" id="1_kgdsp"]
 
-[node name="Node2D" type="Node2D"]
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = -1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_kgdsp")
+expand_mode = 3
