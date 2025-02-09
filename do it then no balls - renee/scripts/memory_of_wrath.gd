@@ -5,12 +5,13 @@ var charge = preload("res://scenes/charge_swing.tscn")
 var direction = 1
 var free = true
 var SPEED = 500
-var recovery_time = 2
+var recovery_time = 0
 var health = 6
-var random_movement = [1,2,3,4,5]
+var random_movement = [1,1,2,2,2,3,4,5]
 var stupid_game
 var over = true
 var over_timer = 1
+var freedom_from_recovery = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,8 +21,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if recovery_time >= 0:
 		recovery_time -= delta
-	if recovery_time == 0:
+		freedom_from_recovery = false
+	if recovery_time <= 0:
 		free = true
+		freedom_from_recovery = true
 	if not is_on_floor():
 		velocity.y += 1500*delta
 	
@@ -56,6 +59,9 @@ func _process(delta: float) -> void:
 		velocity.y -= 1000
 		over = false
 		over_timer = 2
+	
+	if health <= 0:
+		queue_free()
 	move_and_slide()
 
 func attack():
@@ -123,7 +129,10 @@ func _on_charge_range_left_body_entered(body: Node2D) -> void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if 'player' in body.name:
-		body.die()
-	if 'wrath' in body.name:
+		var a = 'a'
+		#body.die()
+	if 'wrath_tree' in body.name:
+		#if free == true:
 		smash()
+		body.queue_free()
 	pass # Replace with function body.
