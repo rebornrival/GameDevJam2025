@@ -5,12 +5,15 @@ var charge = preload("res://scenes/charge_swing.tscn")
 var direction = 1
 var free = true
 var SPEED = 500
-var recovery_time = 2
+var recovery_time = 0
 var health = 6
-var random_movement = [1,2,3,4,5]
+var random_movement = [1,1,2,2,3,4,5]
 var stupid_game
 var over = true
 var over_timer = 1
+var freedom_from_recovery = true
+var is_dashing = false
+var dash_timer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,10 +21,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if dash_timer > 0:
+		dash_timer -=delta
+	else:
+		is_dashing = false
 	if recovery_time >= 0:
 		recovery_time -= delta
-	if recovery_time == 0:
+		freedom_from_recovery = false
+	if recovery_time <= 0:
 		free = true
+		freedom_from_recovery = true
 	if not is_on_floor():
 		velocity.y += 1500*delta
 	
@@ -56,6 +65,26 @@ func _process(delta: float) -> void:
 		velocity.y -= 1000
 		over = false
 		over_timer = 2
+	
+	if health <= 0:
+		queue_free()
+	
+	if direction > 0:
+		$AnimatedSprite2D.set_flip_h(false)
+	elif direction < 0:
+		$AnimatedSprite2D.set_flip_h(true)
+	
+	#animations
+	if is_dashing:
+		$AnimatedSprite2D.play("dash")
+	elif velocity.y > 0:
+		$AnimatedSprite2D.play("jump")
+	elif !is_on_floor():
+		$AnimatedSprite2D.play("fall")
+	elif velocity.x == 0:
+		$AnimatedSprite2D.play("idle")
+	else:
+		$AnimatedSprite2D.play("walk")
 	move_and_slide()
 
 func attack():
@@ -71,6 +100,8 @@ func attack():
 		#get_child(4).get_child(0).set_flip_h(true)
 
 func charge_attack():
+	is_dashing = true
+	dash_timer = .66
 	free = false
 	var parent = get_node(".")
 	var charge_instance = charge.instantiate()
@@ -92,6 +123,7 @@ func smash():
 	recovery_time = 2
 	free = false
 	velocity.x = 0
+	dash_timer = 0
 
 func _on_slash_range_body_entered(body: Node2D) -> void:
 	if 'player' in body.name:
@@ -123,7 +155,9 @@ func _on_charge_range_left_body_entered(body: Node2D) -> void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if 'player' in body.name:
-		body.die()
-	if 'wrath' in body.name:
+		body.wrath_die()
+	if 'wrath_tree' in body.name:
+		#if free == true:
 		smash()
+		body.queue_free()
 	pass # Replace with function body.

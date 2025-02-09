@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=4 uid="uid://bww5r08pj01kk"]
+
+[ext_resource type="Texture2D" uid="uid://c3r8tbdbcr10x" path="res://assets/tilemap 1&2 building set.png" id="1_lvdap"]
+[ext_resource type="PackedScene" uid="uid://bhntly1s8sjlx" path="res://scenes/player.tscn" id="2_vp64u"]
+[ext_resource type="PackedScene" uid="uid://mim5sfiqoheh" path="res://scenes/memory_of_wrath.tscn" id="3_ls4i5"]
+[ext_resource type="PackedScene" uid="uid://b1bdjlwavi2m5" path="res://scenes/wrath_tree.tscn" id="4_ysbcj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nlpil"]
+texture = ExtResource("1_lvdap")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+4:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+4:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, 256, 256, -256, 256, 256)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, 256, -256, -256, 256, 256)
+4:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+4:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 0, 256, 0, 256, 256, 0, 256)
+2:5/0/physics_layer_0/polygon_0/one_way = true
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, 0, 256, 0, 256, 256, -256, 256)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 0, -256, 0, -256, 256, 0, 256)
+4:5/0/physics_layer_0/polygon_0/one_way = true
+2:6/0 = 0
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 0, 256, 256, -256, 256)
+4:6/0 = 0
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 0, 256, -256, 256, 256, 0, 256)
+0:6/0/physics_layer_0/polygon_0/one_way = true
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 0, -256, -256, -256, 256, 0, 256)
+1:6/0/physics_layer_0/polygon_0/one_way = true
+
+[sub_resource type="TileSet" id="TileSet_oms7v"]
+tile_size = Vector2i(512, 512)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_nlpil")
+
+[node name="wrath_placeholder_scene" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.1, 0.1)
+tile_map_data = PackedByteArray("AAD0/wUAAAADAAQAAAD1/wUAAAADAAQAAAD2/wUAAAADAAQAAAD3/wUAAAADAAQAAAD4/wUAAAADAAQAAAD5/wUAAAADAAQAAAD6/wUAAAADAAQAAAD7/wUAAAADAAQAAAD8/wUAAAADAAQAAAD9/wUAAAADAAQAAAD+/wUAAAADAAQAAAD//wUAAAADAAQAAAAAAAUAAAADAAQAAAABAAUAAAADAAQAAAACAAUAAAADAAQAAAADAAUAAAADAAQAAAAEAAUAAAADAAQAAAAFAAUAAAADAAQAAAAGAAUAAAADAAQAAAAHAAUAAAADAAQAAAAIAAUAAAADAAQAAAAJAAUAAAADAAQAAAAKAAUAAAADAAQAAAAkAAUAAAADAAQAAAAjAAUAAAADAAQAAAAiAAUAAAADAAQAAAAhAAUAAAADAAQAAAAgAAUAAAADAAQAAAAfAAUAAAADAAQAAAAeAAUAAAADAAQAAAAdAAUAAAADAAQAAAAcAAUAAAADAAQAAAAbAAUAAAADAAQAAAAaAAUAAAADAAQAAAAZAAUAAAADAAQAAAAYAAUAAAADAAQAAAAXAAUAAAADAAQAAAAWAAUAAAADAAQAAAAVAAUAAAADAAQAAAASAAUAAAADAAQAAAARAAUAAAADAAQAAAAQAAUAAAADAAQAAAAPAAUAAAADAAQAAAAOAAUAAAADAAQAAAANAAUAAAADAAQAAAAMAAUAAAADAAQAAAALAAUAAAADAAQAAAATAAUAAAADAAQAAAAUAAUAAAADAAQAAADz/wQAAAADAAQAAADz/wMAAAADAAQAAADz/wIAAAADAAQAAADz/wEAAAADAAQAAADz/wAAAAADAAQAAADz////AAADAAQAAADz//7/AAADAAQAAADz//3/AAADAAQAAADz//z/AAADAAQAAADz//n/AAADAAQAAADz//r/AAADAAQAAADz//v/AAADAAQAAAAlAAMAAAADAAQAAAAlAAIAAAADAAQAAAAlAAEAAAADAAQAAAAlAAAAAAADAAQAAAAlAP//AAADAAQAAAAlAP7/AAADAAQAAAAlAPz/AAADAAQAAAAlAPv/AAADAAQAAAAlAPr/AAADAAQAAAAlAPn/AAADAAQAAAAlAP3/AAADAAQAAAAlAAQAAAADAAQAAAA=")
+tile_set = SubResource("TileSet_oms7v")
+
+[node name="player" parent="." instance=ExtResource("2_vp64u")]
+position = Vector2(1148, -10)
+
+[node name="memory of wrath" parent="." instance=ExtResource("3_ls4i5")]
+position = Vector2(255, 25)
+
+[node name="wrath_tree" parent="." instance=ExtResource("4_ysbcj")]
+position = Vector2(1154, 191)
+
+[node name="wrath_tree3" parent="." instance=ExtResource("4_ysbcj")]
+position = Vector2(1387, 189)
+script = null
+
+[node name="wrath_tree4" parent="." instance=ExtResource("4_ysbcj")]
+position = Vector2(1656, 193)
+script = null
+
+[node name="wrath_tree5" parent="." instance=ExtResource("4_ysbcj")]
+position = Vector2(-268, 185)
+script = null
+
+[node name="wrath_tree6" parent="." instance=ExtResource("4_ysbcj")]
+position = Vector2(-60, 187)
+rotation = -0.020589
+script = null
+
+[node name="wrath_tree2" parent="." instance=ExtResource("4_ysbcj")]
+position = Vector2(-515, 187)
