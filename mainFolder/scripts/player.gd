@@ -29,7 +29,7 @@ var is_parrying = false
 var parry_timer = 2
 var can_parry = true
 
-var current_spawn = 'respawnNode'
+var current_spawn = 'respawnNodes/respawnNode'
 
 func _physics_process(delta: float) -> void:
 	#MOVEMENT CONTROLS
@@ -195,7 +195,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func respawn():
-	get_node(".").global_transform = get_node(current_spawn).global_transform
+	global_transform = get_parent().get_node(current_spawn).global_transform
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if "respawn" in area.name:
