@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://drf4gdmfdleyi"]
+[gd_scene load_steps=13 format=4 uid="uid://drf4gdmfdleyi"]
 
+[ext_resource type="Script" path="res://scripts/fear_tutorial.gd" id="1_6ddoe"]
 [ext_resource type="Texture2D" uid="uid://c3r8tbdbcr10x" path="res://assets/tilemap 1&2 building set.png" id="1_sekmx"]
 [ext_resource type="PackedScene" uid="uid://bhntly1s8sjlx" path="res://scenes/player.tscn" id="2_bun6f"]
 [ext_resource type="PackedScene" uid="uid://dnfltjyoj3ekj" path="res://scenes/background.tscn" id="3_0f4va"]
@@ -7362,6 +7363,7 @@ tile_size = Vector2i(512, 512)
 sources/0 = SubResource("TileSetAtlasSource_gp63a")
 
 [node name="Node2D2" type="Node2D"]
+script = ExtResource("1_6ddoe")
 
 [node name="superbg" type="TileMapLayer" parent="."]
 modulate = Color(0.6, 0.6, 0.6, 1)
