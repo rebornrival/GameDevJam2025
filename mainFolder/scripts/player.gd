@@ -31,10 +31,10 @@ var can_parry = true
 
 var current_spawn = 'respawnNodes/respawnNode'
 
-func _init() -> void:
-	position.x = Globals.spawn_x
-	position.y = Globals.spawn_y
 
+func _ready() -> void:
+	position = Vector2(Globals.spawn_x, Globals.spawn_y)
+	
 func _physics_process(delta: float) -> void:
 	#MOVEMENT CONTROLS
 	#I moved the direction check up a bit b/c I need it to wall jump and to change how we do wall slides.
@@ -207,4 +207,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		current_spawn = area.name
 		Globals.spawn_x = area.position.x
 		Globals.spawn_y = area.position.y
+		get_parent().get_parent().load_scene(Globals.spawn_scene)
 	pass # Replace with function body.

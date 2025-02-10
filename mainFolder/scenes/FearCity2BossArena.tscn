@@ -7388,7 +7388,7 @@ tile_map_data = PackedByteArray("AACp//7/AAAAAAAAAACq//7/AAAAAAAAAACr//7/AAAAAAA
 tile_set = SubResource("TileSet_ia3bd")
 
 [node name="player" parent="." instance=ExtResource("2_luk8x")]
-position = Vector2(4724, -996)
+position = Vector2(-700, 40)
 
 [node name="evil wall" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -7398,6 +7398,10 @@ sprite_frames = SubResource("SpriteFrames_3fpv5")
 autoplay = "default"
 
 [node name="death" type="Node2D" parent="."]
+
+[node name="Node2D4" parent="death" instance=ExtResource("5_yptet")]
+position = Vector2(-615, 81)
+scale = Vector2(2, 2)
 
 [node name="Node2D2" parent="death" instance=ExtResource("5_yptet")]
 position = Vector2(1364, 84)
@@ -7438,6 +7442,10 @@ scale = Vector2(2, 2)
 [node name="Node2D14" parent="death" instance=ExtResource("5_yptet")]
 position = Vector2(17452, 296)
 scale = Vector2(25, 25)
+
+[node name="Node2D5" parent="death" instance=ExtResource("5_yptet")]
+position = Vector2(-573, 81)
+scale = Vector2(2, 2)
 
 [node name="respawnNodes" type="Node2D" parent="."]
 
