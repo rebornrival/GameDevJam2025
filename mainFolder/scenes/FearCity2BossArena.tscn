@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dgqj74loej7b6"]
+[gd_scene load_steps=23 format=4 uid="uid://dgqj74loej7b6"]
 
 [ext_resource type="Texture2D" uid="uid://c3r8tbdbcr10x" path="res://assets/tilemap 1&2 building set.png" id="1_73aij"]
 [ext_resource type="Script" path="res://scripts/fear_city_2_boss_arena.gd" id="1_j1nd5"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cvnwrghc0apke" path="res://assets/evil wall sprite sheet.png" id="5_qknlb"]
 [ext_resource type="PackedScene" uid="uid://cdi7ftjwvvoyc" path="res://scenes/deathArea.tscn" id="5_yptet"]
 [ext_resource type="PackedScene" uid="uid://b3uyopim4ntkt" path="res://scenes/respawnNode.tscn" id="7_qbhfq"]
+[ext_resource type="Texture2D" uid="uid://daryo5e5u574h" path="res://assets/shadow idle sprite sheet.png" id="9_7yhvo"]
+[ext_resource type="Script" path="res://scenes/fear_dialog_cutscene.gd" id="10_eqegp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnlig"]
 texture = ExtResource("1_73aij")
@@ -7371,6 +7373,35 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_etnov"]
+atlas = ExtResource("9_7yhvo")
+region = Rect2(0, 0, 878, 1197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sijgi"]
+atlas = ExtResource("9_7yhvo")
+region = Rect2(878, 0, 878, 1197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndnwn"]
+atlas = ExtResource("9_7yhvo")
+region = Rect2(1756, 0, 878, 1197)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cf8s5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etnov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sijgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndnwn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
 [node name="FearCityBossArea" type="Node2D"]
 script = ExtResource("1_j1nd5")
 
@@ -7457,3 +7488,11 @@ position = Vector2(4833, -972)
 
 [node name="respawnNode3" parent="respawnNodes" instance=ExtResource("7_qbhfq")]
 position = Vector2(6562, 12)
+
+[node name="FearDialogCutscene" type="AnimatedSprite2D" parent="."]
+position = Vector2(15500, 400)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_cf8s5")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("10_eqegp")
