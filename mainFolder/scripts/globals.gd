@@ -12,3 +12,4 @@ var double_jump_unlocked = false
 var dash_unlocked = false
 var parry_unlocked = false
 var absorb_timer = 0
+var fear_stop = true

@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=4 uid="uid://dgqj74loej7b6"]
+[gd_scene load_steps=18 format=4 uid="uid://dgqj74loej7b6"]
 
 [ext_resource type="Texture2D" uid="uid://c3r8tbdbcr10x" path="res://assets/tilemap 1&2 building set.png" id="1_73aij"]
+[ext_resource type="Script" path="res://scripts/fear_city_2_boss_arena.gd" id="1_r7bal"]
 [ext_resource type="PackedScene" uid="uid://bhntly1s8sjlx" path="res://scenes/player.tscn" id="2_luk8x"]
 [ext_resource type="PackedScene" uid="uid://dnfltjyoj3ekj" path="res://scenes/background.tscn" id="3_nk7lf"]
 [ext_resource type="Texture2D" uid="uid://jflithuu3c88" path="res://assets/grass tilemap.png" id="4_ib1y3"]
-[ext_resource type="Texture2D" uid="uid://cvnwrghc0apke" path="res://assets/evil wall sprite sheet.png" id="5_qknlb"]
+[ext_resource type="PackedScene" uid="uid://8slhydhivgk3" path="res://scenes/evil_wall.tscn" id="6_iopuj"]
+[ext_resource type="PackedScene" uid="uid://kty8rcl5mq65" path="res://scenes/memory_of_fear.tscn" id="6_mgu2l"]
+[ext_resource type="PackedScene" uid="uid://dk047a73ohmh2" path="res://scenes/respawnNode.tscn" id="7_w5pjy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnlig"]
 texture = ExtResource("1_73aij")
@@ -7339,36 +7342,56 @@ tile_size = Vector2i(512, 512)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_v1pyk")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2yq2s"]
-atlas = ExtResource("5_qknlb")
-region = Rect2(0, 0, 2050, 2050)
+[sub_resource type="Animation" id="Animation_o5mce"]
+resource_name = "evil wall"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(7054, -58), Vector2(15073, -118)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y58qc"]
-atlas = ExtResource("5_qknlb")
-region = Rect2(2050, 0, 2050, 2050)
+[sub_resource type="Animation" id="Animation_upkkf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7054, -58)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i6frd"]
-atlas = ExtResource("5_qknlb")
-region = Rect2(4100, 0, 2050, 2050)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r0nsp"]
+_data = {
+"RESET": SubResource("Animation_upkkf"),
+"evil wall": SubResource("Animation_o5mce")
+}
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3fpv5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2yq2s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y58qc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i6frd")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="Curve2D" id="Curve2D_bhi6r"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(-785.397, -118.689, 785.397, 118.689, 7350, 373, 0, 0, 0, 0, 9550, -227, -1775.97, -717.407, 1775.97, 717.407, 12399, -148, 0, 0, 0, 0, 15426, 350)
+}
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j843l"]
+size = Vector2(108, 485)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_r7bal")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(22, 4)
@@ -7386,8 +7409,36 @@ tile_set = SubResource("TileSet_ia3bd")
 [node name="player" parent="." instance=ExtResource("2_luk8x")]
 position = Vector2(31, -134)
 
-[node name="evil wall" type="AnimatedSprite2D" parent="."]
-z_index = 1705
-position = Vector2(6155, -66)
-sprite_frames = SubResource("SpriteFrames_3fpv5")
-autoplay = "default"
+[node name="evil wall" parent="." instance=ExtResource("6_iopuj")]
+visible = false
+position = Vector2(7054, -58)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="evil wall"]
+libraries = {
+"": SubResource("AnimationLibrary_r0nsp")
+}
+autoplay = "evil wall"
+speed_scale = 0.2
+
+[node name="respawnNode" parent="." instance=ExtResource("7_w5pjy")]
+position = Vector2(33, -134)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_bhi6r")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(7350, 373)
+rotation = 0.0118152
+rotates = false
+loop = false
+
+[node name="memory_of_fear" parent="Path2D/PathFollow2D" instance=ExtResource("6_mgu2l")]
+position = Vector2(2.96619, -0.448236)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(7144, 220)
+shape = SubResource("RectangleShape2D_j843l")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
