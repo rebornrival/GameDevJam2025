@@ -192,8 +192,6 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.play()
 	#proof of concept global test dialog, press T to activate.
-	if Input.is_action_just_pressed("test"):
-		add_child(load("res://scenes/hate_dialog_controller.tscn").instantiate())
 	#Respawn bullshit
 	
 	move_and_slide()

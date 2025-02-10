@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=4 uid="uid://csqsmhe3fnfsd"]
+[gd_scene load_steps=15 format=4 uid="uid://csqsmhe3fnfsd"]
 
+[ext_resource type="Script" path="res://scenes/wrath_scene.gd" id="1_quw45"]
 [ext_resource type="Texture2D" uid="uid://c3r8tbdbcr10x" path="res://assets/tilemap 1&2 building set.png" id="1_v7qcx"]
 [ext_resource type="Texture2D" uid="uid://jflithuu3c88" path="res://assets/grass tilemap.png" id="2_cbmlh"]
 [ext_resource type="Texture2D" uid="uid://dcnn0x0um8ga1" path="res://assets/tree tilemap.png" id="2_qg7gd"]
@@ -7365,14 +7366,23 @@ texture_region_size = Vector2i(512, 512)
 texture = ExtResource("4_yxkyp")
 texture_region_size = Vector2i(512, 512)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, 256, -256, 256)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
 3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, 256, -256, 256)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
 3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
 
 [sub_resource type="TileSet" id="TileSet_3d4og"]
 tile_size = Vector2i(512, 512)
@@ -7382,6 +7392,7 @@ sources/1 = SubResource("TileSetAtlasSource_sxk4d")
 
 [node name="wrath_scene" type="Node2D"]
 position = Vector2(0, 1)
+script = ExtResource("1_quw45")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
