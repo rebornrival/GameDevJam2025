@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://8slhydhivgk3"]
+
+[ext_resource type="Texture2D" uid="uid://cvnwrghc0apke" path="res://assets/evil wall sprite sheet.png" id="1_5de1l"]
+[ext_resource type="Script" path="res://scripts/evil_wall.gd" id="1_sq8o5"]
+[ext_resource type="Texture2D" uid="uid://lltf2ixycygi" path="res://assets/la_cube.png" id="2_6l3np"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yq2s"]
+atlas = ExtResource("1_5de1l")
+region = Rect2(0, 0, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y58qc"]
+atlas = ExtResource("1_5de1l")
+region = Rect2(2050, 0, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6frd"]
+atlas = ExtResource("1_5de1l")
+region = Rect2(4100, 0, 2050, 2050)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ulfu7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yq2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y58qc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6frd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agsga"]
+size = Vector2(637, 2692)
+
+[node name="evil wall" type="Area2D"]
+script = ExtResource("1_sq8o5")
+
+[node name="evil wall" type="AnimatedSprite2D" parent="."]
+z_index = 1705
+scale = Vector2(1, 1.595)
+sprite_frames = SubResource("SpriteFrames_ulfu7")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-697.5, 11)
+shape = SubResource("RectangleShape2D_agsga")
+
+[node name="LaCube" type="Sprite2D" parent="."]
+modulate = Color(0.0558315, 0.0785055, 0.0743767, 1)
+position = Vector2(-1763.5, -27)
+scale = Vector2(51.594, 99.133)
+texture = ExtResource("2_6l3np")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

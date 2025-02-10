@@ -7345,34 +7345,53 @@ tile_size = Vector2i(512, 512)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_v1pyk")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2yq2s"]
-atlas = ExtResource("5_qknlb")
-region = Rect2(0, 0, 2050, 2050)
+[sub_resource type="Animation" id="Animation_o5mce"]
+resource_name = "evil wall"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(7054, -58), Vector2(15073, -118)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y58qc"]
-atlas = ExtResource("5_qknlb")
-region = Rect2(2050, 0, 2050, 2050)
+[sub_resource type="Animation" id="Animation_upkkf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7054, -58)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i6frd"]
-atlas = ExtResource("5_qknlb")
-region = Rect2(4100, 0, 2050, 2050)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r0nsp"]
+_data = {
+"RESET": SubResource("Animation_upkkf"),
+"evil wall": SubResource("Animation_o5mce")
+}
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3fpv5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2yq2s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y58qc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i6frd")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="Curve2D" id="Curve2D_bhi6r"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(-785.397, -118.689, 785.397, 118.689, 7350, 373, 0, 0, 0, 0, 9550, -227, -1775.97, -717.407, 1775.97, 717.407, 12399, -148, 0, 0, 0, 0, 15426, 350)
+}
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j843l"]
+size = Vector2(108, 485)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_etnov"]
 atlas = ExtResource("9_7yhvo")
