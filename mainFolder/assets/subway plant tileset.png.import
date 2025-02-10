@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://d0fo3wq0q8wt3"
+=======
+uid="uid://cw8ije0jvuaix"
+>>>>>>> Stashed changes
 path="res://.godot/imported/subway plant tileset.png-e3860f5b8e9c3eb2726dbb76ccf72e20.ctex"
 metadata={
 "vram_texture": false
