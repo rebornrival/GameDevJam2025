@@ -1,12 +1,11 @@
-[gd_scene load_steps=23 format=4 uid="uid://dgqj74loej7b6"]
+[gd_scene load_steps=16 format=4 uid="uid://dgqj74loej7b6"]
 
 [ext_resource type="Texture2D" uid="uid://c3r8tbdbcr10x" path="res://assets/tilemap 1&2 building set.png" id="1_73aij"]
-[ext_resource type="Script" path="res://scripts/fear_city_2_boss_arena.gd" id="1_j1nd5"]
 [ext_resource type="PackedScene" uid="uid://bhntly1s8sjlx" path="res://scenes/player.tscn" id="2_luk8x"]
 [ext_resource type="PackedScene" uid="uid://dnfltjyoj3ekj" path="res://scenes/background.tscn" id="3_nk7lf"]
 [ext_resource type="Texture2D" uid="uid://jflithuu3c88" path="res://assets/grass tilemap.png" id="4_ib1y3"]
 [ext_resource type="Texture2D" uid="uid://cvnwrghc0apke" path="res://assets/evil wall sprite sheet.png" id="5_qknlb"]
-[ext_resource type="PackedScene" uid="uid://cdi7ftjwvvoyc" path="res://scenes/deathArea.tscn" id="5_yptet"]
+[ext_resource type="PackedScene" path="res://scenes/deathArea.tscn" id="5_yptet"]
 [ext_resource type="PackedScene" uid="uid://b3uyopim4ntkt" path="res://scenes/respawnNode.tscn" id="7_qbhfq"]
 [ext_resource type="Texture2D" uid="uid://daryo5e5u574h" path="res://assets/shadow idle sprite sheet.png" id="9_7yhvo"]
 [ext_resource type="Script" path="res://scenes/fear_dialog_cutscene.gd" id="10_eqegp"]
@@ -7403,7 +7402,6 @@ animations = [{
 }]
 
 [node name="FearCityBossArea" type="Node2D"]
-script = ExtResource("1_j1nd5")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(22, 4)
@@ -7419,7 +7417,7 @@ tile_map_data = PackedByteArray("AACp//7/AAAAAAAAAACq//7/AAAAAAAAAACr//7/AAAAAAA
 tile_set = SubResource("TileSet_ia3bd")
 
 [node name="player" parent="." instance=ExtResource("2_luk8x")]
-position = Vector2(-700, 40)
+position = Vector2(4724, -996)
 
 [node name="evil wall" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -7429,10 +7427,6 @@ sprite_frames = SubResource("SpriteFrames_3fpv5")
 autoplay = "default"
 
 [node name="death" type="Node2D" parent="."]
-
-[node name="Node2D4" parent="death" instance=ExtResource("5_yptet")]
-position = Vector2(-615, 81)
-scale = Vector2(2, 2)
 
 [node name="Node2D2" parent="death" instance=ExtResource("5_yptet")]
 position = Vector2(1364, 84)
@@ -7473,10 +7467,6 @@ scale = Vector2(2, 2)
 [node name="Node2D14" parent="death" instance=ExtResource("5_yptet")]
 position = Vector2(17452, 296)
 scale = Vector2(25, 25)
-
-[node name="Node2D5" parent="death" instance=ExtResource("5_yptet")]
-position = Vector2(-573, 81)
-scale = Vector2(2, 2)
 
 [node name="respawnNodes" type="Node2D" parent="."]
 
