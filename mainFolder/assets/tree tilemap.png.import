@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfcyrbkrxqf2c"
-path="res://.godot/imported/train car broken.png-79b7ec72502b696b46fa06d27be1a2a5.ctex"
+uid="uid://ba8vd2p0qhuxj"
+path="res://.godot/imported/tree tilemap.png-b92b4693a56732c8ea1fc8d5eedc3fee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/train car broken.png"
-dest_files=["res://.godot/imported/train car broken.png-79b7ec72502b696b46fa06d27be1a2a5.ctex"]
+source_file="res://assets/tree tilemap.png"
+dest_files=["res://.godot/imported/tree tilemap.png-b92b4693a56732c8ea1fc8d5eedc3fee.ctex"]
 
 [params]
 
