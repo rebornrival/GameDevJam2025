@@ -12,3 +12,6 @@ var double_jump_unlocked = false
 var dash_unlocked = false
 var parry_unlocked = false
 var absorb_timer = 0
+var spawn_x = 0
+var spawn_y = 0
+var spawn_scene = "res://scenes/fearTutorial.tscn"
