@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dnfltjyoj3ekj" path="res://scenes/background.tscn" id="3_nk7lf"]
 [ext_resource type="Texture2D" uid="uid://jflithuu3c88" path="res://assets/grass tilemap.png" id="4_ib1y3"]
 [ext_resource type="Texture2D" uid="uid://cvnwrghc0apke" path="res://assets/evil wall sprite sheet.png" id="5_qknlb"]
-[ext_resource type="PackedScene" path="res://scenes/deathArea.tscn" id="5_yptet"]
+[ext_resource type="PackedScene" uid="uid://cdi7ftjwvvoyc" path="res://scenes/deathArea.tscn" id="5_yptet"]
 [ext_resource type="PackedScene" uid="uid://b3uyopim4ntkt" path="res://scenes/respawnNode.tscn" id="7_qbhfq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnlig"]
