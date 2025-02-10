@@ -83,11 +83,9 @@ func _physics_process(delta: float) -> void:
 			velocity.x = -1800*curr_dir
 			#double_jump = true
 			#if you want to give the player the double jump back when they walljump, add double_jump == true here.
-<<<<<<< HEAD
+
 		elif double_jump == true and Globals.double_jump_unlocked == true:
-=======
-		elif double_jump == true and double_jump_unlocked == true:
->>>>>>> df6f8bb219b82a2473fad4c0ff102a58288bdcf9
+
 			velocity.y = JUMP_VELOCITY
 			double_jump = false
 	#left and right

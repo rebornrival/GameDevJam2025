@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dic700r5wn8fr"
-path="res://.godot/imported/shadow down sprite sheet.png-badf87c0f2959579eac4dc03e90e256d.ctex"
+uid="uid://cnsv2p0drd8dv"
+path="res://.godot/imported/train car normal.png-2e71b440f70610bf4ede937860e08782.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shadow down sprite sheet.png"
-dest_files=["res://.godot/imported/shadow down sprite sheet.png-badf87c0f2959579eac4dc03e90e256d.ctex"]
+source_file="res://assets/train car normal.png"
+dest_files=["res://.godot/imported/train car normal.png-2e71b440f70610bf4ede937860e08782.ctex"]
 
 [params]
 

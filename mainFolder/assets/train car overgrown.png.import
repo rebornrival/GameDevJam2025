@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1q5imlfsqo3d"
-path="res://.godot/imported/shadow idle sprite sheet.png-fbcbc418837e06a8b5b8228ad9e7ae32.ctex"
+uid="uid://dnjj18iusb6fm"
+path="res://.godot/imported/train car overgrown.png-b4fd68508c490863085ce5408b964f6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shadow idle sprite sheet.png"
-dest_files=["res://.godot/imported/shadow idle sprite sheet.png-fbcbc418837e06a8b5b8228ad9e7ae32.ctex"]
+source_file="res://assets/train car overgrown.png"
+dest_files=["res://.godot/imported/train car overgrown.png-b4fd68508c490863085ce5408b964f6d.ctex"]
 
 [params]
 
