@@ -2,16 +2,17 @@ extends CharacterBody2D
 
 const SPEED = 400.0
 const JUMP_VELOCITY = -700.0
-
 var first_wall = false
-
+var double_jump_unlocked = true
 var double_jump = true
+var dash_unlocked = true
 
 var is_dashing = false
 var dash_timer = .75
 var can_dash = true
 var curr_dir = 1
 
+var slash_unlocked = true
 var is_slashing = false
 var slash_timer = 1
 var can_slash = true
@@ -22,10 +23,13 @@ var land_timer = 0.36
 
 var is_jumping = false
 var jump_timer = 0.1
+var parry_unlocked = true
 
 var is_parrying = false
 var parry_timer = 2
 var can_parry = true
+
+var current_spawn = 'respawnNode'
 
 func _physics_process(delta: float) -> void:
 	#MOVEMENT CONTROLS
@@ -67,6 +71,7 @@ func _physics_process(delta: float) -> void:
 			#double_jump = true
 			#if you want to give the player the double jump back when they walljump, add double_jump == true here.
 		elif double_jump == true and Globals.double_jump_unlocked == true:
+		#elif double_jump == true and double_jump_unlocked == true:
 			velocity.y = JUMP_VELOCITY
 			double_jump = false
 	#left and right
@@ -91,6 +96,7 @@ func _physics_process(delta: float) -> void:
 	if dash_timer <=0:
 		is_dashing = false
 	if Input.is_action_just_pressed("dash") and Globals.dash_unlocked == true and can_dash == true and not Globals.cutscenemode:
+	#if Input.is_action_just_pressed("dash") and dash_unlocked == true and can_dash == true and not Globals.cutscenemode:
 		is_dashing = true
 		can_dash = false
 	#slash
@@ -105,6 +111,7 @@ func _physics_process(delta: float) -> void:
 		remove_child(get_child(4))
 		can_slash = true
 	if Input.is_action_just_pressed("hatchet") and Globals.slash_unlocked == true and can_slash == true:
+	#if Input.is_action_just_pressed("hatchet") and slash_unlocked == true and can_slash == true:
 		is_slashing = true
 		can_slash = false
 		slash_timer = 1
@@ -130,6 +137,7 @@ func _physics_process(delta: float) -> void:
 	if parry_timer <= 0:
 		can_parry = true
 	if Input.is_action_just_pressed("parry") and Globals.parry_unlocked == true and can_parry == true and not Globals.cutscenemode:
+	#if Input.is_action_just_pressed("parry") and parry_unlocked == true and can_parry == true and not Globals.cutscenemode:
 		is_parrying = true
 		parry_timer = 2.0
 		can_parry = false
@@ -147,6 +155,7 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play()
 	elif is_parrying:
 		if Globals.slash_unlocked:
+		#if slash_unlocked:
 			$AnimatedSprite2D.animation = "parry_axe"
 			if $AnimatedSprite2D.frame == 0:
 				$AnimatedSprite2D.play()
@@ -181,4 +190,14 @@ func _physics_process(delta: float) -> void:
 	#proof of concept global test dialog, press T to activate.
 	if Input.is_action_just_pressed("test"):
 		add_child(load("res://scenes/hate_dialog_controller.tscn").instantiate())
+	#Respawn bullshit
+	
 	move_and_slide()
+
+func respawn():
+	get_node(".").global_transform = get_node(current_spawn).global_transform
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if "respawn" in area.name:
+		current_spawn = area.name
+	pass # Replace with function body.

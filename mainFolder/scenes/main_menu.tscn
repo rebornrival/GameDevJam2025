@@ -1,7 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ya42jd8lfr2u"]
 
 [ext_resource type="Script" path="res://scenes/margin_container.gd" id="1_28ao0"]
-[ext_resource type="PackedScene" uid="uid://dnfltjyoj3ekj" path="res://scenes/background.tscn" id="2_m01lt"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3

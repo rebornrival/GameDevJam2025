@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://thb2u1v6k1ya"
-path="res://.godot/imported/shadow attack sprite sheet.png-8faee0f61cd088b3adc2c13de7623484.ctex"
+uid="uid://dj5oi1dgy5qy"
+path="res://.godot/imported/shadow up sprite sheet.png-3167450a988a79b480f73498efb64fbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shadow attack sprite sheet.png"
-dest_files=["res://.godot/imported/shadow attack sprite sheet.png-8faee0f61cd088b3adc2c13de7623484.ctex"]
+source_file="res://assets/shadow up sprite sheet.png"
+dest_files=["res://.godot/imported/shadow up sprite sheet.png-3167450a988a79b480f73498efb64fbe.ctex"]
 
 [params]
 
