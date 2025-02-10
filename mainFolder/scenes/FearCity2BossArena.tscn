@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://dgqj74loej7b6"]
+[gd_scene load_steps=28 format=4 uid="uid://dgqj74loej7b6"]
 
 [ext_resource type="Texture2D" uid="uid://c3r8tbdbcr10x" path="res://assets/tilemap 1&2 building set.png" id="1_73aij"]
 [ext_resource type="Script" path="res://scripts/fear_city_2_boss_arena.gd" id="1_j1nd5"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b3uyopim4ntkt" path="res://scenes/respawnNode.tscn" id="7_qbhfq"]
 [ext_resource type="Texture2D" uid="uid://daryo5e5u574h" path="res://assets/shadow idle sprite sheet.png" id="9_7yhvo"]
 [ext_resource type="Script" path="res://scenes/fear_dialog_cutscene.gd" id="10_eqegp"]
+[ext_resource type="Texture2D" uid="uid://bsqrvtiqyeibe" path="res://assets/controls graffiti.png" id="11_3pceu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnlig"]
 texture = ExtResource("1_73aij")
@@ -7402,6 +7403,101 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fely8"]
+texture = ExtResource("1_73aij")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+4:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+4:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, 256, 256, -256, 256, 256)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, 256, -256, -256, 256, 256)
+4:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -64, 256, -60, 256, 256, -256, 256)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -64, 256, -60, 256, 256, -256, 256)
+4:3/0 = 0
+0:4/0 = 0
+0:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-135, -170, 63, -90, 127, -174, 256, -16, 256, 256, -256, 256, -189, 64, -85, 10)
+1:4/0 = 0
+1:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-17, -76, 133, -58, 103, 88, 239, 96, 207, 256, -256, 256, -256, 16, -175, -154, -93, -138)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -64, 256, -60, 256, 256, -256, 256)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -64, 256, -60, 256, 256, -256, 256)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -64, 256, -60, 256, 256, -256, 256)
+0:5/0 = 0
+0:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(3, -126, 145, 48, 256, 12, 256, 256, -256, 256, -95, 132, 7, 52, -45, -72)
+1:5/0 = 0
+1:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(101, 16, 167, 94, 221, 152, 199, 256, -256, 256, -256, 80, -97, 40, -3, 50)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-75, 6, 256, 2, 256, 256, 7, 256, -69, 104)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, 0, 256, 0, 256, 256, -256, 256)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, 6, 71, 6, 75, 108, 11, 256, -256, 256)
+2:6/0 = 0
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 0, 256, 256, -256, 256)
+4:6/0 = 0
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(256, -256, 256, -60, 256, 256, 1, 256, -81, 60)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(49, 18, 67, 106, 3, 256, -256, 256, -256, -256)
+
+[sub_resource type="TileSet" id="TileSet_o0e1s"]
+tile_size = Vector2i(512, 512)
+physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 2
+physics_layer_1/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_fely8")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t0snx"]
+texture = ExtResource("11_3pceu")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_autrn"]
+tile_size = Vector2i(512, 512)
+sources/0 = SubResource("TileSetAtlasSource_t0snx")
+
 [node name="FearCityBossArea" type="Node2D"]
 script = ExtResource("1_j1nd5")
 
@@ -7490,9 +7586,24 @@ position = Vector2(4833, -972)
 position = Vector2(6562, 12)
 
 [node name="FearDialogCutscene" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 0, 1)
 position = Vector2(15500, 400)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_cf8s5")
 animation = &"idle"
 autoplay = "idle"
 script = ExtResource("10_eqegp")
+
+[node name="superbg" type="TileMapLayer" parent="."]
+modulate = Color(0.6, 0.6, 0.6, 1)
+position = Vector2(-1.1, 0)
+scale = Vector2(0.1, 0.1)
+tile_map_data = PackedByteArray("AAD1//b/AAACAAYAAAD1//X/AAACAAYAAAD1//T/AAACAAYAAAD1//P/AAACAAYAAAD1//L/AAACAAYAAAD1//H/AAACAAYAAAD1//D/AAACAAYAAAD1/+//AAACAAYAAAD1/+7/AAACAAYAAAD1/+3/AAACAAYAAAD1/+z/AAACAAUAAAD2/+z/AAADAAUAAAD3/+z/AAADAAUAAAD4/+z/AAADAAUAAAD5/+z/AAADAAUAAAD6/+z/AAADAAUAAAD7/+z/AAADAAUAAAD8/+z/AAADAAUAAAD9/+z/AAAEAAUAAAD9/+3/AAAEAAYAAAD9/wEAAAAEAAYAAAD9/wAAAAAEAAYAAAD9////AAAEAAYAAAD9//7/AAAEAAYAAAD9//3/AAAEAAYAAAD9//z/AAAEAAYAAAD9//v/AAAEAAYAAAD9//r/AAAEAAYAAAD9//n/AAAEAAYAAAD8//n/AAADAAAAAAD8//j/AAADAAAAAAD9//j/AAAEAAYAAAD9//f/AAAEAAYAAAD9//b/AAAEAAYAAAD9//X/AAAEAAYAAAD9//T/AAAEAAYAAAD9//P/AAAEAAYAAAD9//L/AAAEAAYAAAD9//H/AAAEAAYAAAD9//D/AAAEAAYAAAD9/+//AAAEAAYAAAD9/+7/AAAEAAYAAAD8//f/AAADAAAAAAADAAEAAAADAAAAAAADAAAAAAADAAAAAAADAP//AAADAAAAAAAEAP//AAADAAAAAAAFAP//AAADAAAAAAAGAP//AAADAAAAAAAGAAAAAAADAAAAAAAGAAEAAAADAAAAAAAFAAEAAAADAAAAAAAEAAEAAAADAAAAAAAEAAAAAAADAAAAAAAFAAAAAAADAAAAAAD8/wAAAAADAAAAAAD8/wEAAAADAAAAAAD8////AAADAAAAAAD8//7/AAADAAAAAAD8//3/AAADAAAAAAD8//z/AAADAAAAAAD8//v/AAADAAAAAAD8//r/AAADAAAAAAD8//b/AAADAAAAAAD8//X/AAADAAAAAAD8//T/AAADAAAAAAD8//P/AAADAAAAAAD7//P/AAADAAAAAAD7//L/AAADAAAAAAD6//P/AAADAAAAAAD5//P/AAADAAAAAAD4//P/AAADAAAAAAD4//T/AAADAAAAAAD3//T/AAADAAAAAAD3//X/AAADAAAAAAD2//X/AAADAAAAAAD2//T/AAADAAAAAAD2//P/AAADAAAAAAD2//L/AAADAAAAAAD3//L/AAADAAAAAAD3//P/AAADAAAAAAD5//T/AAABAAIAAAD6//T/AAADAAAAAAD7//T/AAADAAAAAAD7//X/AAADAAAAAAD6//X/AAADAAAAAAD5//X/AAABAAMAAAD4//X/AAADAAAAAAD5//L/AAADAAAAAAD4//L/AAADAAAAAAD6//L/AAADAAAAAAD8//L/AAADAAAAAAD8//D/AAADAAAAAAD8/+//AAADAAAAAAD8/+7/AAADAAAAAAD7/+7/AAADAAAAAAD6/+7/AAADAAAAAAD5/+7/AAADAAAAAAD4/+7/AAADAAAAAAD3/+7/AAADAAAAAAD2/+7/AAADAAAAAAD2/+//AAADAAAAAAD3/+//AAADAAAAAAD4/+//AAADAAAAAAD5/+//AAADAAAAAAD5//D/AAADAAAAAAD6//D/AAADAAAAAAD6/+//AAADAAAAAAD7/+//AAADAAAAAAD7//D/AAADAAAAAAD4//D/AAADAAAAAAD3//D/AAADAAAAAAD2//D/AAADAAAAAAA=")
+tile_set = SubResource("TileSet_o0e1s")
+collision_enabled = false
+
+[node name="Grafiti" type="TileMapLayer" parent="."]
+position = Vector2(50, 0)
+scale = Vector2(0.4, 0.4)
+tile_map_data = PackedByteArray("AAD8////AAAAAAAAAAD9////AAABAAAAAAAAAP3/AAAAAAEAAAABAP3/AAABAAEAAAA=")
+tile_set = SubResource("TileSet_autrn")
