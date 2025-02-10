@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://tei87xbhc5lw"
+=======
+uid="uid://cpngx1a17pv1n"
+>>>>>>> origin/Britt
 path="res://.godot/imported/Yuiitsu.png-fd0253d62f7d56ea16f85fcd75bf734b.ctex"
 metadata={
 "vram_texture": false
