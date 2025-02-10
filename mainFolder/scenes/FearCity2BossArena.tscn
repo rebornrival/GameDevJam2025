@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=4 uid="uid://dgqj74loej7b6"]
+[gd_scene load_steps=17 format=4 uid="uid://dgqj74loej7b6"]
 
 [ext_resource type="Texture2D" uid="uid://c3r8tbdbcr10x" path="res://assets/tilemap 1&2 building set.png" id="1_73aij"]
+[ext_resource type="Script" path="res://scripts/fear_city_2_boss_arena.gd" id="1_j1nd5"]
 [ext_resource type="PackedScene" uid="uid://bhntly1s8sjlx" path="res://scenes/player.tscn" id="2_luk8x"]
 [ext_resource type="PackedScene" uid="uid://dnfltjyoj3ekj" path="res://scenes/background.tscn" id="3_nk7lf"]
 [ext_resource type="Texture2D" uid="uid://jflithuu3c88" path="res://assets/grass tilemap.png" id="4_ib1y3"]
@@ -7370,7 +7371,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[node name="FearCityBossArea" type="Node2D"]
+script = ExtResource("1_j1nd5")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(22, 4)
