@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://djoq0co2e2k2o"]
+
+[ext_resource type="Script" path="res://scripts/super_controller.gd" id="1_2xroq"]
+[ext_resource type="PackedScene" uid="uid://d4ftlpqbkku8q" path="res://scenes/hate_scene_room.tscn" id="2_yp2ca"]
+
+[node name="SuperController" type="Node2D"]
+script = ExtResource("1_2xroq")
+
+[node name="hate_scene_room" parent="." instance=ExtResource("2_yp2ca")]

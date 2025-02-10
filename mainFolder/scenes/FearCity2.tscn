@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://m45qgdjm3u6i"]
 
 [ext_resource type="Texture2D" uid="uid://c3r8tbdbcr10x" path="res://assets/tilemap 1&2 building set.png" id="1_73aij"]
-[ext_resource type="PackedScene" path="res://scenes/background.tscn" id="1_xpxd8"]
+[ext_resource type="PackedScene" uid="uid://dnfltjyoj3ekj" path="res://scenes/background.tscn" id="1_xpxd8"]
 [ext_resource type="PackedScene" uid="uid://bhntly1s8sjlx" path="res://scenes/player.tscn" id="2_luk8x"]
 [ext_resource type="PackedScene" uid="uid://b3uyopim4ntkt" path="res://scenes/respawnNode.tscn" id="4_j1np1"]
 
