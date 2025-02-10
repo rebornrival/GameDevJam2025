@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cnan4207outes"]
 
 [ext_resource type="Script" path="res://scripts/wrath_tree.gd" id="1_co3is"]
-[ext_resource type="Texture2D" uid="uid://lltf2ixycygi" path="res://assets/la_cube.png" id="1_q02b8"]
+[ext_resource type="Texture2D" uid="uid://e6yxi70urtjs" path="res://assets/treesus_christ.png" id="2_sem6n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xryn4"]
 size = Vector2(164, 130)
@@ -10,8 +10,10 @@ size = Vector2(164, 130)
 script = ExtResource("1_co3is")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 50)
+scale = Vector2(0.2, 2)
 shape = SubResource("RectangleShape2D_xryn4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(5.1875, 4.03125)
-texture = ExtResource("1_q02b8")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_sem6n")
