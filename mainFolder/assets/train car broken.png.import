@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://thb2u1v6k1ya"
-path="res://.godot/imported/shadow attack sprite sheet.png-8faee0f61cd088b3adc2c13de7623484.ctex"
+uid="uid://7uxbamk37j6o"
+path="res://.godot/imported/train car broken.png-79b7ec72502b696b46fa06d27be1a2a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shadow attack sprite sheet.png"
-dest_files=["res://.godot/imported/shadow attack sprite sheet.png-8faee0f61cd088b3adc2c13de7623484.ctex"]
+source_file="res://assets/train car broken.png"
+dest_files=["res://.godot/imported/train car broken.png-79b7ec72502b696b46fa06d27be1a2a5.ctex"]
 
 [params]
 
