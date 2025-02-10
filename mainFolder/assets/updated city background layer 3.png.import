@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0fo3wq0q8wt3"
-path="res://.godot/imported/subway plant tileset.png-e3860f5b8e9c3eb2726dbb76ccf72e20.ctex"
+uid="uid://drr6432mplqgx"
+path="res://.godot/imported/updated city background layer 3.png-c3b54f2bcfbf48200f6e9f5b3f48f262.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/subway plant tileset.png"
-dest_files=["res://.godot/imported/subway plant tileset.png-e3860f5b8e9c3eb2726dbb76ccf72e20.ctex"]
+source_file="res://assets/updated city background layer 3.png"
+dest_files=["res://.godot/imported/updated city background layer 3.png-c3b54f2bcfbf48200f6e9f5b3f48f262.ctex"]
 
 [params]
 
