@@ -1,6 +1,6 @@
 extends Node
 #Put all global values here.
-var dialog = ["yLine 1", "hLine2", "wLine3", "fLine4"]
+var dialog = []
 var cutscenemode = false
 var endcutsceneafterdialog = true
 var mincamx = -10000
@@ -12,4 +12,6 @@ var double_jump_unlocked = false
 var dash_unlocked = false
 var parry_unlocked = false
 var absorb_timer = 0
-var fear_stop = true
+var spawn_x = 0
+var spawn_y = 0
+var spawn_scene = "res://scenes/fearTutorial.tscn"

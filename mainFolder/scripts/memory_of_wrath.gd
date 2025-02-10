@@ -155,7 +155,9 @@ func _on_charge_range_left_body_entered(body: Node2D) -> void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if 'player' in body.name:
-		body.wrath_die()
+		Globals.spawn_x = 18000
+		Globals.spawn_y = -1945
+		body.respawn()
 	if 'wrath_tree' in body.name:
 		#if free == true:
 		smash()
