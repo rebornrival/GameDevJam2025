@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://d4ftlpqbkku8q"]
+[gd_scene load_steps=28 format=4 uid="uid://d4ftlpqbkku8q"]
 
 [ext_resource type="Script" path="res://scripts/hate_scene_room.gd" id="1_8x06h"]
 [ext_resource type="PackedScene" uid="uid://bhntly1s8sjlx" path="res://scenes/player.tscn" id="2_60lqa"]
@@ -8,9 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dvqs1et7jnet5" path="res://assets/shadow down sprite sheet.png" id="5_rvjxs"]
 [ext_resource type="Texture2D" uid="uid://kyao5kfohc88" path="res://assets/shadow up sprite sheet.png" id="7_8xax6"]
 [ext_resource type="Texture2D" uid="uid://c3q2wnslmfv4h" path="res://assets/shadow walk sprite sheet.png" id="8_qllb3"]
-[ext_resource type="Texture2D" uid="uid://cl2wefxpogjj8" path="res://assets/dialogbox.png" id="9_785wg"]
-[ext_resource type="Script" path="res://scripts/DialogBox.gd" id="10_0vvrp"]
-[ext_resource type="Script" path="res://scripts/dialog.gd" id="11_hg74k"]
 [ext_resource type="Texture2D" uid="uid://b4svoq13ju2u" path="res://assets/subway background layer 1.png" id="12_jws61"]
 [ext_resource type="Texture2D" uid="uid://v2sdfweonaq0" path="res://assets/subway background layer 2.png" id="13_rb8a1"]
 [ext_resource type="Texture2D" uid="uid://cwpbx035t78kq" path="res://assets/subway background layer 3.png" id="14_aoy5g"]
@@ -224,22 +221,6 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="memory_of_hate"]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_gkblr")
-
-[node name="UILayer" type="CanvasLayer" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="UILayer"]
-position = Vector2(960, 880)
-scale = Vector2(1, 0.6)
-texture = ExtResource("9_785wg")
-script = ExtResource("10_0vvrp")
-
-[node name="Dialog" type="Label" parent="UILayer"]
-offset_left = 256.0
-offset_top = 800.0
-offset_right = 1656.0
-offset_bottom = 950.0
-autowrap_mode = 2
-script = ExtResource("11_hg74k")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 z_index = -998
