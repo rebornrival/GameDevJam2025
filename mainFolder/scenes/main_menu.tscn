@@ -1,7 +1,14 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=3 uid="uid://dr7l4xbe1fgq4"]
 
 [ext_resource type="Script" path="res://scenes/margin_container.gd" id="1_28ao0"]
 [ext_resource type="PackedScene" uid="uid://dnfltjyoj3ekj" path="res://scenes/background.tscn" id="2_3ksta"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://ya42jd8lfr2u"]
+
+[ext_resource type="Script" path="res://scenes/margin_container.gd" id="1_28ao0"]
+[ext_resource type="PackedScene" uid="uid://dnfltjyoj3ekj" path="res://scenes/background.tscn" id="2_vj0od"]
+>>>>>>> Stashed changes
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -45,7 +52,11 @@ text = "Credits"
 layout_mode = 2
 text = "Quit"
 
+<<<<<<< Updated upstream
 [node name="CanvasLayer" parent="." instance=ExtResource("2_3ksta")]
+=======
+[node name="CanvasLayer" parent="." instance=ExtResource("2_vj0od")]
+>>>>>>> Stashed changes
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="MarginContainer" method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="MarginContainer" method="_on_credits_pressed"]
