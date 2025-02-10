@@ -89,7 +89,6 @@ tile_set = SubResource("TileSet_41l8j")
 
 [node name="player" parent="." instance=ExtResource("2_sx8f2")]
 position = Vector2(0, -120)
-floor_snap_length = 10.0
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
