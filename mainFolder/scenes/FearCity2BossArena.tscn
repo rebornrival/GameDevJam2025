@@ -1,5 +1,4 @@
 [gd_scene load_steps=30 format=4 uid="uid://dgqj74loej7b6"]
-
 [ext_resource type="Texture2D" uid="uid://c3r8tbdbcr10x" path="res://assets/tilemap 1&2 building set.png" id="1_73aij"]
 [ext_resource type="Script" path="res://scripts/fear_city_2_boss_arena.gd" id="1_j1nd5"]
 [ext_resource type="PackedScene" uid="uid://bhntly1s8sjlx" path="res://scenes/player.tscn" id="2_luk8x"]
@@ -7596,7 +7595,6 @@ scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_cf8s5")
 animation = &"idle"
 autoplay = "idle"
-script = ExtResource("10_eqegp")
 
 [node name="superbg" type="TileMapLayer" parent="."]
 modulate = Color(0.6, 0.6, 0.6, 1)
