@@ -3,6 +3,7 @@ var dialog_state = 0
 var kill_player = false
 var num_options = 3
 var option_selected = 1
+var stall = 5
 
 func _ready():
 	$OptionLayer/Dialog1.set("theme_override_font_sizes/font_size", 36)
@@ -13,13 +14,17 @@ func _ready():
 func _process(delta):
 	Globals.cutscenemode = true
 	if Globals.dialog.size() > 0:
-		visible = false
+		$OptionLayer.visible = false
+		stall = 5
 		option_selected = 1
-	elif kill_player or dialog_state == 7:
+	elif kill_player :
+		get_parent().get_parent().get_parent().load_room(Globals.spawn_scene)
+	elif dialog_state == 7:
 		$OptionLayer.visible = false
 		visible = false
 	else:
-		visible = true
+		stall -= 1
+		$OptionLayer.visible = true
 		if dialog_state == 0:
 			num_options = 3
 			$OptionLayer/Dialog1.set_text("Why shouldn't you?")
@@ -51,8 +56,9 @@ func _process(delta):
 			$OptionLayer/Dialog2.set_text("No. I want to come to terms with what I did.")
 		elif dialog_state == 6:
 			num_options = 3
-			$OptionLayer/Dialog1.set_text("Can I have a cookie?")
-			$OptionLayer/Dialog2.set_text("No. I want to come to terms with what I did.")
+			$OptionLayer/Dialog1.set_text("It was self defence!")
+			$OptionLayer/Dialog2.set_text("He had it coming.")
+			$OptionLayer/Dialog3.set_text("It was for the best.")
 		else:
 			visible = false
 			pass
@@ -77,13 +83,14 @@ func _process(delta):
 			if option_selected > num_options:
 				option_selected = num_options
 		
-		if Input.is_action_just_pressed("movedialog"):
+		if Input.is_action_just_pressed("movedialog") and stall < 0:
 			visible = false
 			if dialog_state == 0:
 				if option_selected == 1:
 					kill_player = true
 					Globals.dialog = ["hWhy shouldn’t I?", "hHah.", "hYou're a monster, you don't deserve closure."]
 				elif option_selected == 2:
+					dialog_state += 3
 					Globals.dialog = ["hHah.", "hGood one, amnesiac.", "hDo you even know what you're trying to atone for?"]
 				elif option_selected == 3:
 					kill_player = true

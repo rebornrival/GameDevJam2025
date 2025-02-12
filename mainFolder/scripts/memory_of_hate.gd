@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 	elif state == 3:
 		if Globals.dialog.size() == 0:
 			state = 4
-			Globals.dialog = ["y...You don’t know why you hate me?", "h...", "hI'm sure it was a good reason.", "y...I believe you.", "yI want to figure out that reason too, so we can move on.", "h...", "hOkay."]
+			Globals.dialog = ["y...They were suffering.", "h...", "h...I believe you.", "yI want us to move on.", "h...", "hOkay."]
 	elif state == 4:
 		if Globals.dialog.size() == 0:
 			velocity.x = -200
@@ -50,6 +50,7 @@ func _process(delta: float) -> void:
 			get_parent().get_child(0).get_child(3).modulate = Color (1.0, 1.0, 1.0, 1.0)
 			Globals.parry_unlocked = true
 			Globals.cutscenemode = false
+			get_parent().get_parent().load_room("res://scenes/the_darkness.tscn")
 	#animations
 	if curr_dir == 1:
 		$AnimatedSprite2D.set_flip_h(false)

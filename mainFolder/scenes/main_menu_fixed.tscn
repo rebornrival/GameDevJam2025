@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/main_menu_fixed.gd" id="1_qro37"]
 [ext_resource type="Texture2D" uid="uid://d2tktuwf015jk" path="res://assets/updated city background layer 2.png" id="2_av8pe"]
 [ext_resource type="Texture2D" uid="uid://ma5evocqcvw0" path="res://assets/updated city background layer 1.png" id="3_4jr1y"]
-[ext_resource type="Texture2D" uid="uid://tei87xbhc5lw" path="res://assets/Yuiitsu.png" id="5_mr0gn"]
+[ext_resource type="Texture2D" uid="uid://cnm4leov8dvwi" path="res://assets/Yuiitsu.png" id="5_54s0r"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jijru"]
 texture = ExtResource("1_hdxv2")
@@ -73,21 +73,18 @@ grow_vertical = 2
 texture = ExtResource("3_4jr1y")
 expand_mode = 1
 
-[node name="Title" type="TextureRect" parent="."]
+[node name="title" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.065625
-anchor_top = -0.136111
-anchor_right = 1.05938
-anchor_bottom = 1.36389
-offset_left = 734.0
-offset_top = 215.0
-offset_right = 734.0
-offset_bottom = 215.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -89.0
+offset_right = 4.0
+offset_bottom = -89.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_mr0gn")
+texture = ExtResource("5_54s0r")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
