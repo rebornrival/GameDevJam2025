@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c46tdgk0r0eok"]
+[gd_scene load_steps=3 format=3 uid="uid://c46tdgk0r0eok"]
+
+[ext_resource type="Script" path="res://scripts/la_swing.gd" id="1_xya2u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jryn8"]
 radius = 30.0
@@ -7,3 +9,4 @@ radius = 30.0
 position = Vector2(20, 0)
 shape = SubResource("CircleShape2D_jryn8")
 target_position = Vector2(0, 0)
+script = ExtResource("1_xya2u")

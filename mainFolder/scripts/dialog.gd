@@ -20,6 +20,8 @@ func _process(delta):
 			set("theme_override_colors/font_color",Color(1.0,0.2,0.2,1.0))
 		elif Globals.dialog[0].substr(0,1) == "f":
 			set("theme_override_colors/font_color",Color(1.0,0.8,0.2,1.0))
+		elif Globals.dialog[0].substr(0,1) == "n":
+			set("theme_override_colors/font_color",Color(1.0,1.0,1.0,1.0))
 		textpos += 0.5
 		set_text(Globals.dialog[0].substr(1, textpos))
 	elif Input.is_action_just_pressed("movedialog"):

@@ -67,6 +67,9 @@ func _process(delta: float) -> void:
 		over_timer = 2
 	
 	if health <= 0:
+		get_parent().get_child(4).position = position
+		get_parent().get_child(4).curr_dir = direction
+		get_parent().get_child(4).visible = true
 		queue_free()
 	
 	if direction > 0:
@@ -76,7 +79,7 @@ func _process(delta: float) -> void:
 	
 	#animations
 	if is_dashing:
-		$AnimatedSprite2D.play("dash")
+		$AnimatedSprite2D.play("slash")
 	elif velocity.y > 0:
 		$AnimatedSprite2D.play("jump")
 	elif !is_on_floor():
@@ -157,7 +160,8 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	if 'player' in body.name:
 		Globals.spawn_x = 18000
 		Globals.spawn_y = -1945
-		body.respawn()
+		get_parent().get_parent().load_room(Globals.spawn_scene)
+		queue_free()
 	if 'wrath_tree' in body.name:
 		#if free == true:
 		smash()

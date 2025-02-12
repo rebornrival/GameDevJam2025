@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=4 uid="uid://csqsmhe3fnfsd"]
+[gd_scene load_steps=21 format=4 uid="uid://csqsmhe3fnfsd"]
 
+[ext_resource type="Script" path="res://scenes/wrath_scene.gd" id="1_quw45"]
 [ext_resource type="Texture2D" uid="uid://c3r8tbdbcr10x" path="res://assets/tilemap 1&2 building set.png" id="1_v7qcx"]
 [ext_resource type="Texture2D" uid="uid://jflithuu3c88" path="res://assets/grass tilemap.png" id="2_cbmlh"]
 [ext_resource type="Texture2D" uid="uid://dcnn0x0um8ga1" path="res://assets/tree tilemap.png" id="2_qg7gd"]
@@ -7,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://mim5sfiqoheh" path="res://scenes/memory_of_wrath.tscn" id="4_ure85"]
 [ext_resource type="Texture2D" uid="uid://ray22uw0ba83" path="res://assets/grass tile update.png" id="4_yxkyp"]
 [ext_resource type="PackedScene" uid="uid://cnan4207outes" path="res://scenes/wrath_tree.tscn" id="5_vn5dd"]
+[ext_resource type="Texture2D" uid="uid://daryo5e5u574h" path="res://assets/shadow idle sprite sheet.png" id="7_k8pu2"]
+[ext_resource type="Script" path="res://scripts/wrath_postfight.gd" id="8_34by8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nlpil"]
 texture = ExtResource("1_v7qcx")
@@ -7389,8 +7392,38 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_j7g8b")
 sources/1 = SubResource("TileSetAtlasSource_sxk4d")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk6sj"]
+atlas = ExtResource("7_k8pu2")
+region = Rect2(0, 0, 878, 1197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su221"]
+atlas = ExtResource("7_k8pu2")
+region = Rect2(878, 0, 878, 1197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t4gu"]
+atlas = ExtResource("7_k8pu2")
+region = Rect2(1756, 0, 878, 1197)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2pxt2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pk6sj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_su221")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0t4gu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
 [node name="wrath_scene" type="Node2D"]
 position = Vector2(0, 1)
+script = ExtResource("1_quw45")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -7411,6 +7444,13 @@ tile_set = SubResource("TileSet_3d4og")
 [node name="player" parent="." instance=ExtResource("3_h1pde")]
 z_index = 0
 position = Vector2(-75, 159)
+
+[node name="wrath_postfight" type="AnimatedSprite2D" parent="."]
+visible = false
+modulate = Color(0, 1, 1, 1)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_2pxt2")
+script = ExtResource("8_34by8")
 
 [node name="memory of wrath" parent="." instance=ExtResource("4_ure85")]
 position = Vector2(19051, -1945)
